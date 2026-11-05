@@ -1,0 +1,19 @@
+{
+  "correction_for": "wrestling_qaoa_sweep_results.json",
+  "field": "analysis.final_minus_optimizer_best_objective.ci95_t",
+  "stored_value": null,
+  "reason": "df=9 t value was missing from the T95 table; computed with scipy.stats.t.ppf(0.975, n-1) from the saved trials. No experiment was rerun.",
+  "corrected": {
+    "n": 10,
+    "df": 9,
+    "t_critical": 2.262157162798205,
+    "mean": 3.6350499999999997,
+    "sd": 2.8449201458232714,
+    "ci95_t": [
+      1.5999167267502523,
+      5.670183273249747
+    ],
+    "all_gaps_positive": true,
+    "sign_test_p_two_sided": 0.001953125
+  }
+}
