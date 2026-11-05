@@ -1,0 +1,78 @@
+{
+  "method": "classical_backtracking",
+  "teams": [
+    "A",
+    "B",
+    "C",
+    "D"
+  ],
+  "n_teams": 4,
+  "n_games": 12,
+  "n_rounds": 6,
+  "solution_found": true,
+  "is_valid": true,
+  "violations": [],
+  "execution_time_seconds": 0.00018289999570697546,
+  "schedule": [
+    {
+      "round": 1,
+      "home": "A",
+      "away": "B"
+    },
+    {
+      "round": 1,
+      "home": "C",
+      "away": "D"
+    },
+    {
+      "round": 2,
+      "home": "A",
+      "away": "C"
+    },
+    {
+      "round": 2,
+      "home": "B",
+      "away": "D"
+    },
+    {
+      "round": 3,
+      "home": "A",
+      "away": "D"
+    },
+    {
+      "round": 3,
+      "home": "B",
+      "away": "C"
+    },
+    {
+      "round": 4,
+      "home": "B",
+      "away": "A"
+    },
+    {
+      "round": 4,
+      "home": "D",
+      "away": "C"
+    },
+    {
+      "round": 5,
+      "home": "C",
+      "away": "A"
+    },
+    {
+      "round": 5,
+      "home": "D",
+      "away": "B"
+    },
+    {
+      "round": 6,
+      "home": "C",
+      "away": "B"
+    },
+    {
+      "round": 6,
+      "home": "D",
+      "away": "A"
+    }
+  ]
+}

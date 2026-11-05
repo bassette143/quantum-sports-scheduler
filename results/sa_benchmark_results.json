@@ -1,0 +1,765 @@
+{
+  "experiment": "phase2f_simulated_annealing_benchmark",
+  "pilot": {
+    "seeds": [
+      901,
+      902,
+      903,
+      904,
+      905
+    ],
+    "runs": [
+      {
+        "method": "simulated_annealing",
+        "seed": 901,
+        "settings": {
+          "max_iterations": 50000,
+          "initial_temperature": 3.0,
+          "cooling_rate": 0.9995
+        },
+        "found_valid_solution": true,
+        "best_assignment": 43281,
+        "best_energy": 0,
+        "final_energy": 0,
+        "iterations_used": 578,
+        "energy_evaluations": 579,
+        "time_s": 0.014223099999071565,
+        "time_to_valid_s": 0.014221099998394493,
+        "validator_confirmed": true
+      },
+      {
+        "method": "simulated_annealing",
+        "seed": 902,
+        "settings": {
+          "max_iterations": 50000,
+          "initial_temperature": 3.0,
+          "cooling_rate": 0.9995
+        },
+        "found_valid_solution": true,
+        "best_assignment": 82530,
+        "best_energy": 0,
+        "final_energy": 0,
+        "iterations_used": 569,
+        "energy_evaluations": 570,
+        "time_s": 0.008427400003711227,
+        "time_to_valid_s": 0.008426500004134141,
+        "validator_confirmed": true
+      },
+      {
+        "method": "simulated_annealing",
+        "seed": 903,
+        "settings": {
+          "max_iterations": 50000,
+          "initial_temperature": 3.0,
+          "cooling_rate": 0.9995
+        },
+        "found_valid_solution": true,
+        "best_assignment": 139860,
+        "best_energy": 0,
+        "final_energy": 0,
+        "iterations_used": 136,
+        "energy_evaluations": 137,
+        "time_s": 0.0018786000000545755,
+        "time_to_valid_s": 0.0018772999974316917,
+        "validator_confirmed": true
+      },
+      {
+        "method": "simulated_annealing",
+        "seed": 904,
+        "settings": {
+          "max_iterations": 50000,
+          "initial_temperature": 3.0,
+          "cooling_rate": 0.9995
+        },
+        "found_valid_solution": true,
+        "best_assignment": 136332,
+        "best_energy": 0,
+        "final_energy": 0,
+        "iterations_used": 180,
+        "energy_evaluations": 181,
+        "time_s": 0.0025467999948887154,
+        "time_to_valid_s": 0.0025457999945501797,
+        "validator_confirmed": true
+      },
+      {
+        "method": "simulated_annealing",
+        "seed": 905,
+        "settings": {
+          "max_iterations": 50000,
+          "initial_temperature": 3.0,
+          "cooling_rate": 0.9995
+        },
+        "found_valid_solution": true,
+        "best_assignment": 82530,
+        "best_energy": 0,
+        "final_energy": 0,
+        "iterations_used": 435,
+        "energy_evaluations": 436,
+        "time_s": 0.0052141999985906295,
+        "time_to_valid_s": 0.005213500000536442,
+        "validator_confirmed": true
+      }
+    ],
+    "total_time_s": 0.039356200002657715
+  },
+  "sa_runs": [
+    {
+      "method": "simulated_annealing",
+      "seed": 101,
+      "settings": {
+        "max_iterations": 50000,
+        "initial_temperature": 3.0,
+        "cooling_rate": 0.9995
+      },
+      "found_valid_solution": true,
+      "best_assignment": 43281,
+      "best_energy": 0,
+      "final_energy": 0,
+      "iterations_used": 793,
+      "energy_evaluations": 794,
+      "time_s": 0.015673500005505048,
+      "time_to_valid_s": 0.015671600005589426,
+      "validator_confirmed": true
+    },
+    {
+      "method": "simulated_annealing",
+      "seed": 102,
+      "settings": {
+        "max_iterations": 50000,
+        "initial_temperature": 3.0,
+        "cooling_rate": 0.9995
+      },
+      "found_valid_solution": true,
+      "best_assignment": 50337,
+      "best_energy": 0,
+      "final_energy": 0,
+      "iterations_used": 973,
+      "energy_evaluations": 974,
+      "time_s": 0.023257300003024284,
+      "time_to_valid_s": 0.023255200001585763,
+      "validator_confirmed": true
+    },
+    {
+      "method": "simulated_annealing",
+      "seed": 103,
+      "settings": {
+        "max_iterations": 50000,
+        "initial_temperature": 3.0,
+        "cooling_rate": 0.9995
+      },
+      "found_valid_solution": true,
+      "best_assignment": 50337,
+      "best_energy": 0,
+      "final_energy": 0,
+      "iterations_used": 798,
+      "energy_evaluations": 799,
+      "time_s": 0.00782479999907082,
+      "time_to_valid_s": 0.007823200001439545,
+      "validator_confirmed": true
+    },
+    {
+      "method": "simulated_annealing",
+      "seed": 104,
+      "settings": {
+        "max_iterations": 50000,
+        "initial_temperature": 3.0,
+        "cooling_rate": 0.9995
+      },
+      "found_valid_solution": true,
+      "best_assignment": 136332,
+      "best_energy": 0,
+      "final_energy": 0,
+      "iterations_used": 797,
+      "energy_evaluations": 798,
+      "time_s": 0.011319199998979457,
+      "time_to_valid_s": 0.011317500000586733,
+      "validator_confirmed": true
+    },
+    {
+      "method": "simulated_annealing",
+      "seed": 105,
+      "settings": {
+        "max_iterations": 50000,
+        "initial_temperature": 3.0,
+        "cooling_rate": 0.9995
+      },
+      "found_valid_solution": true,
+      "best_assignment": 50337,
+      "best_energy": 0,
+      "final_energy": 0,
+      "iterations_used": 2053,
+      "energy_evaluations": 2054,
+      "time_s": 0.03073469999799272,
+      "time_to_valid_s": 0.030733599996892735,
+      "validator_confirmed": true
+    },
+    {
+      "method": "simulated_annealing",
+      "seed": 106,
+      "settings": {
+        "max_iterations": 50000,
+        "initial_temperature": 3.0,
+        "cooling_rate": 0.9995
+      },
+      "found_valid_solution": true,
+      "best_assignment": 43281,
+      "best_energy": 0,
+      "final_energy": 0,
+      "iterations_used": 373,
+      "energy_evaluations": 374,
+      "time_s": 0.0044720000005327165,
+      "time_to_valid_s": 0.004471400003239978,
+      "validator_confirmed": true
+    },
+    {
+      "method": "simulated_annealing",
+      "seed": 107,
+      "settings": {
+        "max_iterations": 50000,
+        "initial_temperature": 3.0,
+        "cooling_rate": 0.9995
+      },
+      "found_valid_solution": true,
+      "best_assignment": 43281,
+      "best_energy": 0,
+      "final_energy": 0,
+      "iterations_used": 875,
+      "energy_evaluations": 876,
+      "time_s": 0.011589800000365358,
+      "time_to_valid_s": 0.011588900000788271,
+      "validator_confirmed": true
+    },
+    {
+      "method": "simulated_annealing",
+      "seed": 108,
+      "settings": {
+        "max_iterations": 50000,
+        "initial_temperature": 3.0,
+        "cooling_rate": 0.9995
+      },
+      "found_valid_solution": true,
+      "best_assignment": 71946,
+      "best_energy": 0,
+      "final_energy": 0,
+      "iterations_used": 988,
+      "energy_evaluations": 989,
+      "time_s": 0.01351509999949485,
+      "time_to_valid_s": 0.013513899997633416,
+      "validator_confirmed": true
+    },
+    {
+      "method": "simulated_annealing",
+      "seed": 109,
+      "settings": {
+        "max_iterations": 50000,
+        "initial_temperature": 3.0,
+        "cooling_rate": 0.9995
+      },
+      "found_valid_solution": true,
+      "best_assignment": 139860,
+      "best_energy": 0,
+      "final_energy": 0,
+      "iterations_used": 766,
+      "energy_evaluations": 767,
+      "time_s": 0.010680999999749474,
+      "time_to_valid_s": 0.010680200000933837,
+      "validator_confirmed": true
+    },
+    {
+      "method": "simulated_annealing",
+      "seed": 110,
+      "settings": {
+        "max_iterations": 50000,
+        "initial_temperature": 3.0,
+        "cooling_rate": 0.9995
+      },
+      "found_valid_solution": true,
+      "best_assignment": 71946,
+      "best_energy": 0,
+      "final_energy": 0,
+      "iterations_used": 1489,
+      "energy_evaluations": 1490,
+      "time_s": 0.025137500000710133,
+      "time_to_valid_s": 0.025136200005363207,
+      "validator_confirmed": true
+    },
+    {
+      "method": "simulated_annealing",
+      "seed": 111,
+      "settings": {
+        "max_iterations": 50000,
+        "initial_temperature": 3.0,
+        "cooling_rate": 0.9995
+      },
+      "found_valid_solution": true,
+      "best_assignment": 71946,
+      "best_energy": 0,
+      "final_energy": 0,
+      "iterations_used": 458,
+      "energy_evaluations": 459,
+      "time_s": 0.005858800002897624,
+      "time_to_valid_s": 0.005858300006366335,
+      "validator_confirmed": true
+    },
+    {
+      "method": "simulated_annealing",
+      "seed": 112,
+      "settings": {
+        "max_iterations": 50000,
+        "initial_temperature": 3.0,
+        "cooling_rate": 0.9995
+      },
+      "found_valid_solution": true,
+      "best_assignment": 50337,
+      "best_energy": 0,
+      "final_energy": 0,
+      "iterations_used": 1025,
+      "energy_evaluations": 1026,
+      "time_s": 0.014721999999892432,
+      "time_to_valid_s": 0.014721299994562287,
+      "validator_confirmed": true
+    },
+    {
+      "method": "simulated_annealing",
+      "seed": 113,
+      "settings": {
+        "max_iterations": 50000,
+        "initial_temperature": 3.0,
+        "cooling_rate": 0.9995
+      },
+      "found_valid_solution": true,
+      "best_assignment": 71946,
+      "best_energy": 0,
+      "final_energy": 0,
+      "iterations_used": 1799,
+      "energy_evaluations": 1800,
+      "time_s": 0.021609999996144325,
+      "time_to_valid_s": 0.021609099996567238,
+      "validator_confirmed": true
+    },
+    {
+      "method": "simulated_annealing",
+      "seed": 114,
+      "settings": {
+        "max_iterations": 50000,
+        "initial_temperature": 3.0,
+        "cooling_rate": 0.9995
+      },
+      "found_valid_solution": true,
+      "best_assignment": 50337,
+      "best_energy": 0,
+      "final_energy": 0,
+      "iterations_used": 341,
+      "energy_evaluations": 342,
+      "time_s": 0.006781500000215601,
+      "time_to_valid_s": 0.006780700001399964,
+      "validator_confirmed": true
+    },
+    {
+      "method": "simulated_annealing",
+      "seed": 115,
+      "settings": {
+        "max_iterations": 50000,
+        "initial_temperature": 3.0,
+        "cooling_rate": 0.9995
+      },
+      "found_valid_solution": true,
+      "best_assignment": 82530,
+      "best_energy": 0,
+      "final_energy": 0,
+      "iterations_used": 1063,
+      "energy_evaluations": 1064,
+      "time_s": 0.009751000005053356,
+      "time_to_valid_s": 0.009750299999723211,
+      "validator_confirmed": true
+    },
+    {
+      "method": "simulated_annealing",
+      "seed": 116,
+      "settings": {
+        "max_iterations": 50000,
+        "initial_temperature": 3.0,
+        "cooling_rate": 0.9995
+      },
+      "found_valid_solution": true,
+      "best_assignment": 82530,
+      "best_energy": 0,
+      "final_energy": 0,
+      "iterations_used": 136,
+      "energy_evaluations": 137,
+      "time_s": 0.003654599997389596,
+      "time_to_valid_s": 0.003652600003988482,
+      "validator_confirmed": true
+    },
+    {
+      "method": "simulated_annealing",
+      "seed": 117,
+      "settings": {
+        "max_iterations": 50000,
+        "initial_temperature": 3.0,
+        "cooling_rate": 0.9995
+      },
+      "found_valid_solution": true,
+      "best_assignment": 50337,
+      "best_energy": 0,
+      "final_energy": 0,
+      "iterations_used": 644,
+      "energy_evaluations": 645,
+      "time_s": 0.005585600003541913,
+      "time_to_valid_s": 0.005584799997450318,
+      "validator_confirmed": true
+    },
+    {
+      "method": "simulated_annealing",
+      "seed": 118,
+      "settings": {
+        "max_iterations": 50000,
+        "initial_temperature": 3.0,
+        "cooling_rate": 0.9995
+      },
+      "found_valid_solution": true,
+      "best_assignment": 139860,
+      "best_energy": 0,
+      "final_energy": 0,
+      "iterations_used": 591,
+      "energy_evaluations": 592,
+      "time_s": 0.004982600003131665,
+      "time_to_valid_s": 0.004981999998562969,
+      "validator_confirmed": true
+    },
+    {
+      "method": "simulated_annealing",
+      "seed": 119,
+      "settings": {
+        "max_iterations": 50000,
+        "initial_temperature": 3.0,
+        "cooling_rate": 0.9995
+      },
+      "found_valid_solution": true,
+      "best_assignment": 43281,
+      "best_energy": 0,
+      "final_energy": 0,
+      "iterations_used": 1085,
+      "energy_evaluations": 1086,
+      "time_s": 0.014126099995337427,
+      "time_to_valid_s": 0.01412529999652179,
+      "validator_confirmed": true
+    },
+    {
+      "method": "simulated_annealing",
+      "seed": 120,
+      "settings": {
+        "max_iterations": 50000,
+        "initial_temperature": 3.0,
+        "cooling_rate": 0.9995
+      },
+      "found_valid_solution": true,
+      "best_assignment": 82530,
+      "best_energy": 0,
+      "final_energy": 0,
+      "iterations_used": 183,
+      "energy_evaluations": 184,
+      "time_s": 0.001517900003818795,
+      "time_to_valid_s": 0.0015174000000115484,
+      "validator_confirmed": true
+    },
+    {
+      "method": "simulated_annealing",
+      "seed": 121,
+      "settings": {
+        "max_iterations": 50000,
+        "initial_temperature": 3.0,
+        "cooling_rate": 0.9995
+      },
+      "found_valid_solution": true,
+      "best_assignment": 136332,
+      "best_energy": 0,
+      "final_energy": 0,
+      "iterations_used": 522,
+      "energy_evaluations": 523,
+      "time_s": 0.007046200000331737,
+      "time_to_valid_s": 0.007045099999231752,
+      "validator_confirmed": true
+    },
+    {
+      "method": "simulated_annealing",
+      "seed": 122,
+      "settings": {
+        "max_iterations": 50000,
+        "initial_temperature": 3.0,
+        "cooling_rate": 0.9995
+      },
+      "found_valid_solution": true,
+      "best_assignment": 82530,
+      "best_energy": 0,
+      "final_energy": 0,
+      "iterations_used": 745,
+      "energy_evaluations": 746,
+      "time_s": 0.0060548000037670135,
+      "time_to_valid_s": 0.006054400000721216,
+      "validator_confirmed": true
+    },
+    {
+      "method": "simulated_annealing",
+      "seed": 123,
+      "settings": {
+        "max_iterations": 50000,
+        "initial_temperature": 3.0,
+        "cooling_rate": 0.9995
+      },
+      "found_valid_solution": true,
+      "best_assignment": 82530,
+      "best_energy": 0,
+      "final_energy": 0,
+      "iterations_used": 1236,
+      "energy_evaluations": 1237,
+      "time_s": 0.014135500001430046,
+      "time_to_valid_s": 0.014134800003375858,
+      "validator_confirmed": true
+    },
+    {
+      "method": "simulated_annealing",
+      "seed": 124,
+      "settings": {
+        "max_iterations": 50000,
+        "initial_temperature": 3.0,
+        "cooling_rate": 0.9995
+      },
+      "found_valid_solution": true,
+      "best_assignment": 71946,
+      "best_energy": 0,
+      "final_energy": 0,
+      "iterations_used": 1569,
+      "energy_evaluations": 1570,
+      "time_s": 0.016388499992899597,
+      "time_to_valid_s": 0.01638719999755267,
+      "validator_confirmed": true
+    },
+    {
+      "method": "simulated_annealing",
+      "seed": 125,
+      "settings": {
+        "max_iterations": 50000,
+        "initial_temperature": 3.0,
+        "cooling_rate": 0.9995
+      },
+      "found_valid_solution": true,
+      "best_assignment": 136332,
+      "best_energy": 0,
+      "final_energy": 0,
+      "iterations_used": 1876,
+      "energy_evaluations": 1877,
+      "time_s": 0.01976969999668654,
+      "time_to_valid_s": 0.019768899997870903,
+      "validator_confirmed": true
+    },
+    {
+      "method": "simulated_annealing",
+      "seed": 126,
+      "settings": {
+        "max_iterations": 50000,
+        "initial_temperature": 3.0,
+        "cooling_rate": 0.9995
+      },
+      "found_valid_solution": true,
+      "best_assignment": 43281,
+      "best_energy": 0,
+      "final_energy": 0,
+      "iterations_used": 1161,
+      "energy_evaluations": 1162,
+      "time_s": 0.016633499995805323,
+      "time_to_valid_s": 0.01663229999394389,
+      "validator_confirmed": true
+    },
+    {
+      "method": "simulated_annealing",
+      "seed": 127,
+      "settings": {
+        "max_iterations": 50000,
+        "initial_temperature": 3.0,
+        "cooling_rate": 0.9995
+      },
+      "found_valid_solution": true,
+      "best_assignment": 136332,
+      "best_energy": 0,
+      "final_energy": 0,
+      "iterations_used": 1353,
+      "energy_evaluations": 1354,
+      "time_s": 0.02794430000358261,
+      "time_to_valid_s": 0.02794290000019828,
+      "validator_confirmed": true
+    },
+    {
+      "method": "simulated_annealing",
+      "seed": 128,
+      "settings": {
+        "max_iterations": 50000,
+        "initial_temperature": 3.0,
+        "cooling_rate": 0.9995
+      },
+      "found_valid_solution": true,
+      "best_assignment": 139860,
+      "best_energy": 0,
+      "final_energy": 0,
+      "iterations_used": 473,
+      "energy_evaluations": 474,
+      "time_s": 0.0052863000018987805,
+      "time_to_valid_s": 0.005285500003083143,
+      "validator_confirmed": true
+    },
+    {
+      "method": "simulated_annealing",
+      "seed": 129,
+      "settings": {
+        "max_iterations": 50000,
+        "initial_temperature": 3.0,
+        "cooling_rate": 0.9995
+      },
+      "found_valid_solution": true,
+      "best_assignment": 71946,
+      "best_energy": 0,
+      "final_energy": 0,
+      "iterations_used": 1384,
+      "energy_evaluations": 1385,
+      "time_s": 0.018544899998232722,
+      "time_to_valid_s": 0.01854359999560984,
+      "validator_confirmed": true
+    },
+    {
+      "method": "simulated_annealing",
+      "seed": 130,
+      "settings": {
+        "max_iterations": 50000,
+        "initial_temperature": 3.0,
+        "cooling_rate": 0.9995
+      },
+      "found_valid_solution": true,
+      "best_assignment": 71946,
+      "best_energy": 0,
+      "final_energy": 0,
+      "iterations_used": 454,
+      "energy_evaluations": 455,
+      "time_s": 0.010065599999506958,
+      "time_to_valid_s": 0.010064699999929871,
+      "validator_confirmed": true
+    }
+  ],
+  "sa_summary": {
+    "method": "simulated_annealing",
+    "runtime_environment": "classical CPU (pure Python + NumPy RNG)",
+    "settings": {
+      "max_iterations": 50000,
+      "initial_temperature": 3.0,
+      "cooling_rate": 0.9995
+    },
+    "n_runs": 30,
+    "seeds": [
+      101,
+      102,
+      103,
+      104,
+      105,
+      106,
+      107,
+      108,
+      109,
+      110,
+      111,
+      112,
+      113,
+      114,
+      115,
+      116,
+      117,
+      118,
+      119,
+      120,
+      121,
+      122,
+      123,
+      124,
+      125,
+      126,
+      127,
+      128,
+      129,
+      130
+    ],
+    "successful_runs": 30,
+    "success_percent": 100.0,
+    "all_successes_validator_confirmed": true,
+    "best_energy_overall": 0,
+    "mean_best_energy": 0,
+    "median_time_s": 0.011454499999672407,
+    "mean_time_s": 0.012822143333566297,
+    "stdev_time_s": 0.007606500450241094,
+    "min_time_s": 0.001517900003818795,
+    "max_time_s": 0.03073469999799272,
+    "median_time_to_valid_s": 0.011453200000687502,
+    "mean_iterations": 933.4333333333333,
+    "median_energy_evaluations": 837.5,
+    "mean_energy_evaluations": 934.4333333333333,
+    "total_time_all_runs_s": 0.3846643000069889,
+    "expected_tts_including_failures_s": 0.012822143333566297,
+    "tts99_s": 0.03073469999799272,
+    "tts99_note": "all runs succeeded; reporting 99th-percentile single-run time"
+  },
+  "classical_baseline": {
+    "method": "classical_backtracking",
+    "same_problem_as_qubo": true,
+    "repeats": 200,
+    "all_runs_found_valid_zero_energy_solution": true,
+    "median_time_s": 1.4299999747890979e-05,
+    "mean_time_s": 1.592250009707641e-05,
+    "stdev_time_s": 1.5368604626221068e-05,
+    "min_time_s": 1.2700002116616815e-05,
+    "max_time_s": 0.00022899999748915434
+  },
+  "qaoa_summaries_from_phase2c_not_rerun": [
+    {
+      "method": "qaoa_p1",
+      "runtime_environment": "quantum circuit SIMULATOR (Aer, noiseless)",
+      "n_runs": 5,
+      "successful_runs": 1,
+      "success_percent": 20.0,
+      "best_energy_overall": 0,
+      "median_time_s": 2.0607941999987816,
+      "expected_tts_including_failures_s": 10.000972299996647,
+      "tts99_s": 42.53005723624166,
+      "tts99_note": "median run time x ln(0.01)/ln(1-p), p=0.200 from finite sample (PRELIMINARY: only 5 trials)",
+      "preliminary_small_sample": true
+    },
+    {
+      "method": "qaoa_p2",
+      "runtime_environment": "quantum circuit SIMULATOR (Aer, noiseless)",
+      "n_runs": 5,
+      "successful_runs": 3,
+      "success_percent": 60.0,
+      "best_energy_overall": 0,
+      "median_time_s": 4.756906599999638,
+      "expected_tts_including_failures_s": 7.954665533332445,
+      "tts99_s": 23.907656914789104,
+      "tts99_note": "median run time x ln(0.01)/ln(1-p), p=0.600 from finite sample (PRELIMINARY: only 5 trials)",
+      "preliminary_small_sample": true
+    },
+    {
+      "method": "qaoa_p3",
+      "runtime_environment": "quantum circuit SIMULATOR (Aer, noiseless)",
+      "n_runs": 5,
+      "successful_runs": 4,
+      "success_percent": 80.0,
+      "best_energy_overall": 0,
+      "median_time_s": 6.947871999997005,
+      "expected_tts_including_failures_s": 8.770809224999539,
+      "tts99_s": 19.88031519778043,
+      "tts99_note": "median run time x ln(0.01)/ln(1-p), p=0.800 from finite sample (PRELIMINARY: only 5 trials)",
+      "preliminary_small_sample": true
+    }
+  ],
+  "fairness_notes": [
+    "QAOA numbers are the stored Phase 2C five-seed measurements; they were not rerun. Sample sizes differ (30 vs 5): QAOA comparisons are preliminary.",
+    "Success units differ: an SA 'run' ends at the first valid solution or 50,000 iterations; a QAOA 'trial' includes a ~30-40 iteration optimization (1,000 shots each) plus 4,000 final shots. Equal counts are not equal computational effort.",
+    "All SA and backtracking times are classical CPU; all QAOA times are noiseless-simulator times, not hardware times.",
+    "TTS99 assumes independent repeated attempts with the measured per-run success fraction; that fraction carries binomial uncertainty from finite samples."
+  ]
+}

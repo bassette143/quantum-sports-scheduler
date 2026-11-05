@@ -1,0 +1,111 @@
+{
+  "experiment": "wrestling_mat_qubo_feasibility_phase_w4",
+  "settings": {
+    "seed": 42,
+    "n_mats": 6,
+    "rest_slots": 1,
+    "snapshot_slot": 17,
+    "objective": "maximize bracket progression (u in {1,2})",
+    "added_constraint": "at most one match per weight class per slot"
+  },
+  "instance": {
+    "pool": [
+      "W106-R4-S1",
+      "W113-R4-S1",
+      "W145-R3-S2",
+      "W152-R3-S1",
+      "W160-R3-S1",
+      "W170-R3-S1",
+      "W182-R3-S1",
+      "W182-R3-S2",
+      "W195-R3-S1",
+      "W195-R3-S2",
+      "W220-R3-S1",
+      "W220-R3-S2",
+      "W285-R3-S1",
+      "W285-R3-S2"
+    ],
+    "weights": [
+      106,
+      113,
+      145,
+      152,
+      160,
+      170,
+      182,
+      182,
+      195,
+      195,
+      220,
+      220,
+      285,
+      285
+    ],
+    "scores": [
+      2,
+      2,
+      2,
+      2,
+      2,
+      2,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1
+    ],
+    "k": 6,
+    "n_variables": 14,
+    "n_qubits_required": 14,
+    "n_quadratic_terms": 91,
+    "penalty_A": 13,
+    "penalty_B": 13
+  },
+  "verification": {
+    "n_assignments": 16384,
+    "n_feasible": 1289,
+    "ground_energy": -12,
+    "all_ground_states_feasible": true,
+    "ground_equals_best_feasible": true,
+    "optimal_score": 12,
+    "min_infeasible_penalty": 13,
+    "enumeration_time_s": 0.11940019999747165
+  },
+  "n_ground_states": 1,
+  "classical_brute_force": {
+    "best_score": 12,
+    "n_optimal_subsets": 1,
+    "example_subset": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5
+    ],
+    "time_s": 0.003087499993853271
+  },
+  "classical_greedy": {
+    "score": 12,
+    "selection": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5
+    ],
+    "time_s": 1.170000177808106e-05
+  },
+  "checks": {
+    "all_ground_states_feasible": true,
+    "ground_equals_best_feasible": true,
+    "invalid_assignments_positively_penalized": true,
+    "brute_force_matches_qubo_optimum": true,
+    "validator_accepts_all_optimal_selections": true
+  },
+  "all_checks_passed": true
+}

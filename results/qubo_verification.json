@@ -1,0 +1,34 @@
+{
+  "experiment": "qubo_brute_force_verification",
+  "teams": [
+    "A",
+    "B",
+    "C",
+    "D"
+  ],
+  "n_matchups": 6,
+  "n_rounds_single_rr": 3,
+  "n_binary_variables": 18,
+  "n_assignments_checked": 262144,
+  "n_zero_energy_assignments": 6,
+  "zero_energy_assignments": [
+    43281,
+    50337,
+    71946,
+    82530,
+    136332,
+    139860
+  ],
+  "min_nonzero_energy": 3,
+  "enumeration_time_seconds": 0.9539401000001817,
+  "backtracking_time_seconds": 2.830000448739156e-05,
+  "checks": {
+    "exactly_six_ground_states": true,
+    "all_other_assignments_positive_energy": true,
+    "all_mirrored_schedules_pass_phase1_validator": true,
+    "backtracking_solution_found": true,
+    "backtracking_solution_has_zero_energy": true,
+    "backtracking_mirrored_schedule_valid": true
+  },
+  "all_checks_passed": true
+}

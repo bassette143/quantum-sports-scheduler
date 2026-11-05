@@ -1,0 +1,3097 @@
+{
+  "experiment": "wrestling_bracket_generation_phase_w2",
+  "settings": {
+    "seed": 42,
+    "n_schools": 12,
+    "weight_classes": [
+      106,
+      113,
+      120,
+      126,
+      132,
+      138,
+      145,
+      152,
+      160,
+      170,
+      182,
+      195,
+      220,
+      285
+    ],
+    "bracket_type": "single-elimination championship (simplified)",
+    "placement": "synthetic deterministic placement in roster order (unseeded); not official NFHS seeding or bye distribution"
+  },
+  "brackets": {
+    "106": {
+      "weight": 106,
+      "entrants": [
+        "School 1",
+        "School 2",
+        "School 3",
+        "School 5",
+        "School 6",
+        "School 7",
+        "School 8",
+        "School 9",
+        "School 11",
+        "School 12"
+      ],
+      "entrant_ids": [
+        "School 1 @ 106",
+        "School 2 @ 106",
+        "School 3 @ 106",
+        "School 5 @ 106",
+        "School 6 @ 106",
+        "School 7 @ 106",
+        "School 8 @ 106",
+        "School 9 @ 106",
+        "School 11 @ 106",
+        "School 12 @ 106"
+      ],
+      "n_entrants": 10,
+      "bracket_size": 16,
+      "byes": 6,
+      "projected_contested_matches": 9,
+      "placement": "synthetic deterministic placement in roster order (unseeded); not official NFHS seeding or bye distribution",
+      "positions": [
+        "School 1",
+        null,
+        "School 2",
+        null,
+        "School 3",
+        null,
+        "School 5",
+        null,
+        "School 6",
+        null,
+        "School 7",
+        null,
+        "School 8",
+        "School 9",
+        "School 11",
+        "School 12"
+      ],
+      "rounds": [
+        {
+          "round": 1,
+          "slots": [
+            {
+              "id": "W106-R1-S1",
+              "round": 1,
+              "type": "bye",
+              "wrestlers": [
+                "School 1",
+                null
+              ],
+              "advances": "School 1"
+            },
+            {
+              "id": "W106-R1-S2",
+              "round": 1,
+              "type": "bye",
+              "wrestlers": [
+                "School 2",
+                null
+              ],
+              "advances": "School 2"
+            },
+            {
+              "id": "W106-R1-S3",
+              "round": 1,
+              "type": "bye",
+              "wrestlers": [
+                "School 3",
+                null
+              ],
+              "advances": "School 3"
+            },
+            {
+              "id": "W106-R1-S4",
+              "round": 1,
+              "type": "bye",
+              "wrestlers": [
+                "School 5",
+                null
+              ],
+              "advances": "School 5"
+            },
+            {
+              "id": "W106-R1-S5",
+              "round": 1,
+              "type": "bye",
+              "wrestlers": [
+                "School 6",
+                null
+              ],
+              "advances": "School 6"
+            },
+            {
+              "id": "W106-R1-S6",
+              "round": 1,
+              "type": "bye",
+              "wrestlers": [
+                "School 7",
+                null
+              ],
+              "advances": "School 7"
+            },
+            {
+              "id": "W106-R1-S7",
+              "round": 1,
+              "type": "match",
+              "wrestlers": [
+                "School 8",
+                "School 9"
+              ],
+              "winner": null
+            },
+            {
+              "id": "W106-R1-S8",
+              "round": 1,
+              "type": "match",
+              "wrestlers": [
+                "School 11",
+                "School 12"
+              ],
+              "winner": null
+            }
+          ]
+        },
+        {
+          "round": 2,
+          "slots": [
+            {
+              "id": "W106-R2-S1",
+              "round": 2,
+              "type": "placeholder",
+              "fed_by": [
+                "W106-R1-S1",
+                "W106-R1-S2"
+              ],
+              "participants": [
+                "School 1",
+                "School 2"
+              ],
+              "winner": null
+            },
+            {
+              "id": "W106-R2-S2",
+              "round": 2,
+              "type": "placeholder",
+              "fed_by": [
+                "W106-R1-S3",
+                "W106-R1-S4"
+              ],
+              "participants": [
+                "School 3",
+                "School 5"
+              ],
+              "winner": null
+            },
+            {
+              "id": "W106-R2-S3",
+              "round": 2,
+              "type": "placeholder",
+              "fed_by": [
+                "W106-R1-S5",
+                "W106-R1-S6"
+              ],
+              "participants": [
+                "School 6",
+                "School 7"
+              ],
+              "winner": null
+            },
+            {
+              "id": "W106-R2-S4",
+              "round": 2,
+              "type": "placeholder",
+              "fed_by": [
+                "W106-R1-S7",
+                "W106-R1-S8"
+              ],
+              "participants": [
+                null,
+                null
+              ],
+              "winner": null
+            }
+          ]
+        },
+        {
+          "round": 3,
+          "slots": [
+            {
+              "id": "W106-R3-S1",
+              "round": 3,
+              "type": "placeholder",
+              "fed_by": [
+                "W106-R2-S1",
+                "W106-R2-S2"
+              ],
+              "participants": [
+                null,
+                null
+              ],
+              "winner": null
+            },
+            {
+              "id": "W106-R3-S2",
+              "round": 3,
+              "type": "placeholder",
+              "fed_by": [
+                "W106-R2-S3",
+                "W106-R2-S4"
+              ],
+              "participants": [
+                null,
+                null
+              ],
+              "winner": null
+            }
+          ]
+        },
+        {
+          "round": 4,
+          "slots": [
+            {
+              "id": "W106-R4-S1",
+              "round": 4,
+              "type": "placeholder",
+              "fed_by": [
+                "W106-R3-S1",
+                "W106-R3-S2"
+              ],
+              "participants": [
+                null,
+                null
+              ],
+              "winner": null
+            }
+          ]
+        }
+      ],
+      "champion": null
+    },
+    "113": {
+      "weight": 113,
+      "entrants": [
+        "School 1",
+        "School 2",
+        "School 3",
+        "School 4",
+        "School 5",
+        "School 6",
+        "School 7",
+        "School 9",
+        "School 10",
+        "School 11",
+        "School 12"
+      ],
+      "entrant_ids": [
+        "School 1 @ 113",
+        "School 2 @ 113",
+        "School 3 @ 113",
+        "School 4 @ 113",
+        "School 5 @ 113",
+        "School 6 @ 113",
+        "School 7 @ 113",
+        "School 9 @ 113",
+        "School 10 @ 113",
+        "School 11 @ 113",
+        "School 12 @ 113"
+      ],
+      "n_entrants": 11,
+      "bracket_size": 16,
+      "byes": 5,
+      "projected_contested_matches": 10,
+      "placement": "synthetic deterministic placement in roster order (unseeded); not official NFHS seeding or bye distribution",
+      "positions": [
+        "School 1",
+        null,
+        "School 2",
+        null,
+        "School 3",
+        null,
+        "School 4",
+        null,
+        "School 5",
+        null,
+        "School 6",
+        "School 7",
+        "School 9",
+        "School 10",
+        "School 11",
+        "School 12"
+      ],
+      "rounds": [
+        {
+          "round": 1,
+          "slots": [
+            {
+              "id": "W113-R1-S1",
+              "round": 1,
+              "type": "bye",
+              "wrestlers": [
+                "School 1",
+                null
+              ],
+              "advances": "School 1"
+            },
+            {
+              "id": "W113-R1-S2",
+              "round": 1,
+              "type": "bye",
+              "wrestlers": [
+                "School 2",
+                null
+              ],
+              "advances": "School 2"
+            },
+            {
+              "id": "W113-R1-S3",
+              "round": 1,
+              "type": "bye",
+              "wrestlers": [
+                "School 3",
+                null
+              ],
+              "advances": "School 3"
+            },
+            {
+              "id": "W113-R1-S4",
+              "round": 1,
+              "type": "bye",
+              "wrestlers": [
+                "School 4",
+                null
+              ],
+              "advances": "School 4"
+            },
+            {
+              "id": "W113-R1-S5",
+              "round": 1,
+              "type": "bye",
+              "wrestlers": [
+                "School 5",
+                null
+              ],
+              "advances": "School 5"
+            },
+            {
+              "id": "W113-R1-S6",
+              "round": 1,
+              "type": "match",
+              "wrestlers": [
+                "School 6",
+                "School 7"
+              ],
+              "winner": null
+            },
+            {
+              "id": "W113-R1-S7",
+              "round": 1,
+              "type": "match",
+              "wrestlers": [
+                "School 9",
+                "School 10"
+              ],
+              "winner": null
+            },
+            {
+              "id": "W113-R1-S8",
+              "round": 1,
+              "type": "match",
+              "wrestlers": [
+                "School 11",
+                "School 12"
+              ],
+              "winner": null
+            }
+          ]
+        },
+        {
+          "round": 2,
+          "slots": [
+            {
+              "id": "W113-R2-S1",
+              "round": 2,
+              "type": "placeholder",
+              "fed_by": [
+                "W113-R1-S1",
+                "W113-R1-S2"
+              ],
+              "participants": [
+                "School 1",
+                "School 2"
+              ],
+              "winner": null
+            },
+            {
+              "id": "W113-R2-S2",
+              "round": 2,
+              "type": "placeholder",
+              "fed_by": [
+                "W113-R1-S3",
+                "W113-R1-S4"
+              ],
+              "participants": [
+                "School 3",
+                "School 4"
+              ],
+              "winner": null
+            },
+            {
+              "id": "W113-R2-S3",
+              "round": 2,
+              "type": "placeholder",
+              "fed_by": [
+                "W113-R1-S5",
+                "W113-R1-S6"
+              ],
+              "participants": [
+                "School 5",
+                null
+              ],
+              "winner": null
+            },
+            {
+              "id": "W113-R2-S4",
+              "round": 2,
+              "type": "placeholder",
+              "fed_by": [
+                "W113-R1-S7",
+                "W113-R1-S8"
+              ],
+              "participants": [
+                null,
+                null
+              ],
+              "winner": null
+            }
+          ]
+        },
+        {
+          "round": 3,
+          "slots": [
+            {
+              "id": "W113-R3-S1",
+              "round": 3,
+              "type": "placeholder",
+              "fed_by": [
+                "W113-R2-S1",
+                "W113-R2-S2"
+              ],
+              "participants": [
+                null,
+                null
+              ],
+              "winner": null
+            },
+            {
+              "id": "W113-R3-S2",
+              "round": 3,
+              "type": "placeholder",
+              "fed_by": [
+                "W113-R2-S3",
+                "W113-R2-S4"
+              ],
+              "participants": [
+                null,
+                null
+              ],
+              "winner": null
+            }
+          ]
+        },
+        {
+          "round": 4,
+          "slots": [
+            {
+              "id": "W113-R4-S1",
+              "round": 4,
+              "type": "placeholder",
+              "fed_by": [
+                "W113-R3-S1",
+                "W113-R3-S2"
+              ],
+              "participants": [
+                null,
+                null
+              ],
+              "winner": null
+            }
+          ]
+        }
+      ],
+      "champion": null
+    },
+    "120": {
+      "weight": 120,
+      "entrants": [
+        "School 1",
+        "School 3",
+        "School 4",
+        "School 5",
+        "School 7",
+        "School 10",
+        "School 12"
+      ],
+      "entrant_ids": [
+        "School 1 @ 120",
+        "School 3 @ 120",
+        "School 4 @ 120",
+        "School 5 @ 120",
+        "School 7 @ 120",
+        "School 10 @ 120",
+        "School 12 @ 120"
+      ],
+      "n_entrants": 7,
+      "bracket_size": 8,
+      "byes": 1,
+      "projected_contested_matches": 6,
+      "placement": "synthetic deterministic placement in roster order (unseeded); not official NFHS seeding or bye distribution",
+      "positions": [
+        "School 1",
+        null,
+        "School 3",
+        "School 4",
+        "School 5",
+        "School 7",
+        "School 10",
+        "School 12"
+      ],
+      "rounds": [
+        {
+          "round": 1,
+          "slots": [
+            {
+              "id": "W120-R1-S1",
+              "round": 1,
+              "type": "bye",
+              "wrestlers": [
+                "School 1",
+                null
+              ],
+              "advances": "School 1"
+            },
+            {
+              "id": "W120-R1-S2",
+              "round": 1,
+              "type": "match",
+              "wrestlers": [
+                "School 3",
+                "School 4"
+              ],
+              "winner": null
+            },
+            {
+              "id": "W120-R1-S3",
+              "round": 1,
+              "type": "match",
+              "wrestlers": [
+                "School 5",
+                "School 7"
+              ],
+              "winner": null
+            },
+            {
+              "id": "W120-R1-S4",
+              "round": 1,
+              "type": "match",
+              "wrestlers": [
+                "School 10",
+                "School 12"
+              ],
+              "winner": null
+            }
+          ]
+        },
+        {
+          "round": 2,
+          "slots": [
+            {
+              "id": "W120-R2-S1",
+              "round": 2,
+              "type": "placeholder",
+              "fed_by": [
+                "W120-R1-S1",
+                "W120-R1-S2"
+              ],
+              "participants": [
+                "School 1",
+                null
+              ],
+              "winner": null
+            },
+            {
+              "id": "W120-R2-S2",
+              "round": 2,
+              "type": "placeholder",
+              "fed_by": [
+                "W120-R1-S3",
+                "W120-R1-S4"
+              ],
+              "participants": [
+                null,
+                null
+              ],
+              "winner": null
+            }
+          ]
+        },
+        {
+          "round": 3,
+          "slots": [
+            {
+              "id": "W120-R3-S1",
+              "round": 3,
+              "type": "placeholder",
+              "fed_by": [
+                "W120-R2-S1",
+                "W120-R2-S2"
+              ],
+              "participants": [
+                null,
+                null
+              ],
+              "winner": null
+            }
+          ]
+        }
+      ],
+      "champion": null
+    },
+    "126": {
+      "weight": 126,
+      "entrants": [
+        "School 1",
+        "School 2",
+        "School 3",
+        "School 5",
+        "School 6",
+        "School 7",
+        "School 8",
+        "School 9",
+        "School 10",
+        "School 11",
+        "School 12"
+      ],
+      "entrant_ids": [
+        "School 1 @ 126",
+        "School 2 @ 126",
+        "School 3 @ 126",
+        "School 5 @ 126",
+        "School 6 @ 126",
+        "School 7 @ 126",
+        "School 8 @ 126",
+        "School 9 @ 126",
+        "School 10 @ 126",
+        "School 11 @ 126",
+        "School 12 @ 126"
+      ],
+      "n_entrants": 11,
+      "bracket_size": 16,
+      "byes": 5,
+      "projected_contested_matches": 10,
+      "placement": "synthetic deterministic placement in roster order (unseeded); not official NFHS seeding or bye distribution",
+      "positions": [
+        "School 1",
+        null,
+        "School 2",
+        null,
+        "School 3",
+        null,
+        "School 5",
+        null,
+        "School 6",
+        null,
+        "School 7",
+        "School 8",
+        "School 9",
+        "School 10",
+        "School 11",
+        "School 12"
+      ],
+      "rounds": [
+        {
+          "round": 1,
+          "slots": [
+            {
+              "id": "W126-R1-S1",
+              "round": 1,
+              "type": "bye",
+              "wrestlers": [
+                "School 1",
+                null
+              ],
+              "advances": "School 1"
+            },
+            {
+              "id": "W126-R1-S2",
+              "round": 1,
+              "type": "bye",
+              "wrestlers": [
+                "School 2",
+                null
+              ],
+              "advances": "School 2"
+            },
+            {
+              "id": "W126-R1-S3",
+              "round": 1,
+              "type": "bye",
+              "wrestlers": [
+                "School 3",
+                null
+              ],
+              "advances": "School 3"
+            },
+            {
+              "id": "W126-R1-S4",
+              "round": 1,
+              "type": "bye",
+              "wrestlers": [
+                "School 5",
+                null
+              ],
+              "advances": "School 5"
+            },
+            {
+              "id": "W126-R1-S5",
+              "round": 1,
+              "type": "bye",
+              "wrestlers": [
+                "School 6",
+                null
+              ],
+              "advances": "School 6"
+            },
+            {
+              "id": "W126-R1-S6",
+              "round": 1,
+              "type": "match",
+              "wrestlers": [
+                "School 7",
+                "School 8"
+              ],
+              "winner": null
+            },
+            {
+              "id": "W126-R1-S7",
+              "round": 1,
+              "type": "match",
+              "wrestlers": [
+                "School 9",
+                "School 10"
+              ],
+              "winner": null
+            },
+            {
+              "id": "W126-R1-S8",
+              "round": 1,
+              "type": "match",
+              "wrestlers": [
+                "School 11",
+                "School 12"
+              ],
+              "winner": null
+            }
+          ]
+        },
+        {
+          "round": 2,
+          "slots": [
+            {
+              "id": "W126-R2-S1",
+              "round": 2,
+              "type": "placeholder",
+              "fed_by": [
+                "W126-R1-S1",
+                "W126-R1-S2"
+              ],
+              "participants": [
+                "School 1",
+                "School 2"
+              ],
+              "winner": null
+            },
+            {
+              "id": "W126-R2-S2",
+              "round": 2,
+              "type": "placeholder",
+              "fed_by": [
+                "W126-R1-S3",
+                "W126-R1-S4"
+              ],
+              "participants": [
+                "School 3",
+                "School 5"
+              ],
+              "winner": null
+            },
+            {
+              "id": "W126-R2-S3",
+              "round": 2,
+              "type": "placeholder",
+              "fed_by": [
+                "W126-R1-S5",
+                "W126-R1-S6"
+              ],
+              "participants": [
+                "School 6",
+                null
+              ],
+              "winner": null
+            },
+            {
+              "id": "W126-R2-S4",
+              "round": 2,
+              "type": "placeholder",
+              "fed_by": [
+                "W126-R1-S7",
+                "W126-R1-S8"
+              ],
+              "participants": [
+                null,
+                null
+              ],
+              "winner": null
+            }
+          ]
+        },
+        {
+          "round": 3,
+          "slots": [
+            {
+              "id": "W126-R3-S1",
+              "round": 3,
+              "type": "placeholder",
+              "fed_by": [
+                "W126-R2-S1",
+                "W126-R2-S2"
+              ],
+              "participants": [
+                null,
+                null
+              ],
+              "winner": null
+            },
+            {
+              "id": "W126-R3-S2",
+              "round": 3,
+              "type": "placeholder",
+              "fed_by": [
+                "W126-R2-S3",
+                "W126-R2-S4"
+              ],
+              "participants": [
+                null,
+                null
+              ],
+              "winner": null
+            }
+          ]
+        },
+        {
+          "round": 4,
+          "slots": [
+            {
+              "id": "W126-R4-S1",
+              "round": 4,
+              "type": "placeholder",
+              "fed_by": [
+                "W126-R3-S1",
+                "W126-R3-S2"
+              ],
+              "participants": [
+                null,
+                null
+              ],
+              "winner": null
+            }
+          ]
+        }
+      ],
+      "champion": null
+    },
+    "132": {
+      "weight": 132,
+      "entrants": [
+        "School 1",
+        "School 3",
+        "School 5",
+        "School 6",
+        "School 7",
+        "School 8",
+        "School 9",
+        "School 10",
+        "School 11",
+        "School 12"
+      ],
+      "entrant_ids": [
+        "School 1 @ 132",
+        "School 3 @ 132",
+        "School 5 @ 132",
+        "School 6 @ 132",
+        "School 7 @ 132",
+        "School 8 @ 132",
+        "School 9 @ 132",
+        "School 10 @ 132",
+        "School 11 @ 132",
+        "School 12 @ 132"
+      ],
+      "n_entrants": 10,
+      "bracket_size": 16,
+      "byes": 6,
+      "projected_contested_matches": 9,
+      "placement": "synthetic deterministic placement in roster order (unseeded); not official NFHS seeding or bye distribution",
+      "positions": [
+        "School 1",
+        null,
+        "School 3",
+        null,
+        "School 5",
+        null,
+        "School 6",
+        null,
+        "School 7",
+        null,
+        "School 8",
+        null,
+        "School 9",
+        "School 10",
+        "School 11",
+        "School 12"
+      ],
+      "rounds": [
+        {
+          "round": 1,
+          "slots": [
+            {
+              "id": "W132-R1-S1",
+              "round": 1,
+              "type": "bye",
+              "wrestlers": [
+                "School 1",
+                null
+              ],
+              "advances": "School 1"
+            },
+            {
+              "id": "W132-R1-S2",
+              "round": 1,
+              "type": "bye",
+              "wrestlers": [
+                "School 3",
+                null
+              ],
+              "advances": "School 3"
+            },
+            {
+              "id": "W132-R1-S3",
+              "round": 1,
+              "type": "bye",
+              "wrestlers": [
+                "School 5",
+                null
+              ],
+              "advances": "School 5"
+            },
+            {
+              "id": "W132-R1-S4",
+              "round": 1,
+              "type": "bye",
+              "wrestlers": [
+                "School 6",
+                null
+              ],
+              "advances": "School 6"
+            },
+            {
+              "id": "W132-R1-S5",
+              "round": 1,
+              "type": "bye",
+              "wrestlers": [
+                "School 7",
+                null
+              ],
+              "advances": "School 7"
+            },
+            {
+              "id": "W132-R1-S6",
+              "round": 1,
+              "type": "bye",
+              "wrestlers": [
+                "School 8",
+                null
+              ],
+              "advances": "School 8"
+            },
+            {
+              "id": "W132-R1-S7",
+              "round": 1,
+              "type": "match",
+              "wrestlers": [
+                "School 9",
+                "School 10"
+              ],
+              "winner": null
+            },
+            {
+              "id": "W132-R1-S8",
+              "round": 1,
+              "type": "match",
+              "wrestlers": [
+                "School 11",
+                "School 12"
+              ],
+              "winner": null
+            }
+          ]
+        },
+        {
+          "round": 2,
+          "slots": [
+            {
+              "id": "W132-R2-S1",
+              "round": 2,
+              "type": "placeholder",
+              "fed_by": [
+                "W132-R1-S1",
+                "W132-R1-S2"
+              ],
+              "participants": [
+                "School 1",
+                "School 3"
+              ],
+              "winner": null
+            },
+            {
+              "id": "W132-R2-S2",
+              "round": 2,
+              "type": "placeholder",
+              "fed_by": [
+                "W132-R1-S3",
+                "W132-R1-S4"
+              ],
+              "participants": [
+                "School 5",
+                "School 6"
+              ],
+              "winner": null
+            },
+            {
+              "id": "W132-R2-S3",
+              "round": 2,
+              "type": "placeholder",
+              "fed_by": [
+                "W132-R1-S5",
+                "W132-R1-S6"
+              ],
+              "participants": [
+                "School 7",
+                "School 8"
+              ],
+              "winner": null
+            },
+            {
+              "id": "W132-R2-S4",
+              "round": 2,
+              "type": "placeholder",
+              "fed_by": [
+                "W132-R1-S7",
+                "W132-R1-S8"
+              ],
+              "participants": [
+                null,
+                null
+              ],
+              "winner": null
+            }
+          ]
+        },
+        {
+          "round": 3,
+          "slots": [
+            {
+              "id": "W132-R3-S1",
+              "round": 3,
+              "type": "placeholder",
+              "fed_by": [
+                "W132-R2-S1",
+                "W132-R2-S2"
+              ],
+              "participants": [
+                null,
+                null
+              ],
+              "winner": null
+            },
+            {
+              "id": "W132-R3-S2",
+              "round": 3,
+              "type": "placeholder",
+              "fed_by": [
+                "W132-R2-S3",
+                "W132-R2-S4"
+              ],
+              "participants": [
+                null,
+                null
+              ],
+              "winner": null
+            }
+          ]
+        },
+        {
+          "round": 4,
+          "slots": [
+            {
+              "id": "W132-R4-S1",
+              "round": 4,
+              "type": "placeholder",
+              "fed_by": [
+                "W132-R3-S1",
+                "W132-R3-S2"
+              ],
+              "participants": [
+                null,
+                null
+              ],
+              "winner": null
+            }
+          ]
+        }
+      ],
+      "champion": null
+    },
+    "138": {
+      "weight": 138,
+      "entrants": [
+        "School 1",
+        "School 2",
+        "School 3",
+        "School 4",
+        "School 5",
+        "School 7",
+        "School 8",
+        "School 9",
+        "School 11",
+        "School 12"
+      ],
+      "entrant_ids": [
+        "School 1 @ 138",
+        "School 2 @ 138",
+        "School 3 @ 138",
+        "School 4 @ 138",
+        "School 5 @ 138",
+        "School 7 @ 138",
+        "School 8 @ 138",
+        "School 9 @ 138",
+        "School 11 @ 138",
+        "School 12 @ 138"
+      ],
+      "n_entrants": 10,
+      "bracket_size": 16,
+      "byes": 6,
+      "projected_contested_matches": 9,
+      "placement": "synthetic deterministic placement in roster order (unseeded); not official NFHS seeding or bye distribution",
+      "positions": [
+        "School 1",
+        null,
+        "School 2",
+        null,
+        "School 3",
+        null,
+        "School 4",
+        null,
+        "School 5",
+        null,
+        "School 7",
+        null,
+        "School 8",
+        "School 9",
+        "School 11",
+        "School 12"
+      ],
+      "rounds": [
+        {
+          "round": 1,
+          "slots": [
+            {
+              "id": "W138-R1-S1",
+              "round": 1,
+              "type": "bye",
+              "wrestlers": [
+                "School 1",
+                null
+              ],
+              "advances": "School 1"
+            },
+            {
+              "id": "W138-R1-S2",
+              "round": 1,
+              "type": "bye",
+              "wrestlers": [
+                "School 2",
+                null
+              ],
+              "advances": "School 2"
+            },
+            {
+              "id": "W138-R1-S3",
+              "round": 1,
+              "type": "bye",
+              "wrestlers": [
+                "School 3",
+                null
+              ],
+              "advances": "School 3"
+            },
+            {
+              "id": "W138-R1-S4",
+              "round": 1,
+              "type": "bye",
+              "wrestlers": [
+                "School 4",
+                null
+              ],
+              "advances": "School 4"
+            },
+            {
+              "id": "W138-R1-S5",
+              "round": 1,
+              "type": "bye",
+              "wrestlers": [
+                "School 5",
+                null
+              ],
+              "advances": "School 5"
+            },
+            {
+              "id": "W138-R1-S6",
+              "round": 1,
+              "type": "bye",
+              "wrestlers": [
+                "School 7",
+                null
+              ],
+              "advances": "School 7"
+            },
+            {
+              "id": "W138-R1-S7",
+              "round": 1,
+              "type": "match",
+              "wrestlers": [
+                "School 8",
+                "School 9"
+              ],
+              "winner": null
+            },
+            {
+              "id": "W138-R1-S8",
+              "round": 1,
+              "type": "match",
+              "wrestlers": [
+                "School 11",
+                "School 12"
+              ],
+              "winner": null
+            }
+          ]
+        },
+        {
+          "round": 2,
+          "slots": [
+            {
+              "id": "W138-R2-S1",
+              "round": 2,
+              "type": "placeholder",
+              "fed_by": [
+                "W138-R1-S1",
+                "W138-R1-S2"
+              ],
+              "participants": [
+                "School 1",
+                "School 2"
+              ],
+              "winner": null
+            },
+            {
+              "id": "W138-R2-S2",
+              "round": 2,
+              "type": "placeholder",
+              "fed_by": [
+                "W138-R1-S3",
+                "W138-R1-S4"
+              ],
+              "participants": [
+                "School 3",
+                "School 4"
+              ],
+              "winner": null
+            },
+            {
+              "id": "W138-R2-S3",
+              "round": 2,
+              "type": "placeholder",
+              "fed_by": [
+                "W138-R1-S5",
+                "W138-R1-S6"
+              ],
+              "participants": [
+                "School 5",
+                "School 7"
+              ],
+              "winner": null
+            },
+            {
+              "id": "W138-R2-S4",
+              "round": 2,
+              "type": "placeholder",
+              "fed_by": [
+                "W138-R1-S7",
+                "W138-R1-S8"
+              ],
+              "participants": [
+                null,
+                null
+              ],
+              "winner": null
+            }
+          ]
+        },
+        {
+          "round": 3,
+          "slots": [
+            {
+              "id": "W138-R3-S1",
+              "round": 3,
+              "type": "placeholder",
+              "fed_by": [
+                "W138-R2-S1",
+                "W138-R2-S2"
+              ],
+              "participants": [
+                null,
+                null
+              ],
+              "winner": null
+            },
+            {
+              "id": "W138-R3-S2",
+              "round": 3,
+              "type": "placeholder",
+              "fed_by": [
+                "W138-R2-S3",
+                "W138-R2-S4"
+              ],
+              "participants": [
+                null,
+                null
+              ],
+              "winner": null
+            }
+          ]
+        },
+        {
+          "round": 4,
+          "slots": [
+            {
+              "id": "W138-R4-S1",
+              "round": 4,
+              "type": "placeholder",
+              "fed_by": [
+                "W138-R3-S1",
+                "W138-R3-S2"
+              ],
+              "participants": [
+                null,
+                null
+              ],
+              "winner": null
+            }
+          ]
+        }
+      ],
+      "champion": null
+    },
+    "145": {
+      "weight": 145,
+      "entrants": [
+        "School 1",
+        "School 3",
+        "School 4",
+        "School 5",
+        "School 6",
+        "School 7",
+        "School 8",
+        "School 9",
+        "School 10",
+        "School 11",
+        "School 12"
+      ],
+      "entrant_ids": [
+        "School 1 @ 145",
+        "School 3 @ 145",
+        "School 4 @ 145",
+        "School 5 @ 145",
+        "School 6 @ 145",
+        "School 7 @ 145",
+        "School 8 @ 145",
+        "School 9 @ 145",
+        "School 10 @ 145",
+        "School 11 @ 145",
+        "School 12 @ 145"
+      ],
+      "n_entrants": 11,
+      "bracket_size": 16,
+      "byes": 5,
+      "projected_contested_matches": 10,
+      "placement": "synthetic deterministic placement in roster order (unseeded); not official NFHS seeding or bye distribution",
+      "positions": [
+        "School 1",
+        null,
+        "School 3",
+        null,
+        "School 4",
+        null,
+        "School 5",
+        null,
+        "School 6",
+        null,
+        "School 7",
+        "School 8",
+        "School 9",
+        "School 10",
+        "School 11",
+        "School 12"
+      ],
+      "rounds": [
+        {
+          "round": 1,
+          "slots": [
+            {
+              "id": "W145-R1-S1",
+              "round": 1,
+              "type": "bye",
+              "wrestlers": [
+                "School 1",
+                null
+              ],
+              "advances": "School 1"
+            },
+            {
+              "id": "W145-R1-S2",
+              "round": 1,
+              "type": "bye",
+              "wrestlers": [
+                "School 3",
+                null
+              ],
+              "advances": "School 3"
+            },
+            {
+              "id": "W145-R1-S3",
+              "round": 1,
+              "type": "bye",
+              "wrestlers": [
+                "School 4",
+                null
+              ],
+              "advances": "School 4"
+            },
+            {
+              "id": "W145-R1-S4",
+              "round": 1,
+              "type": "bye",
+              "wrestlers": [
+                "School 5",
+                null
+              ],
+              "advances": "School 5"
+            },
+            {
+              "id": "W145-R1-S5",
+              "round": 1,
+              "type": "bye",
+              "wrestlers": [
+                "School 6",
+                null
+              ],
+              "advances": "School 6"
+            },
+            {
+              "id": "W145-R1-S6",
+              "round": 1,
+              "type": "match",
+              "wrestlers": [
+                "School 7",
+                "School 8"
+              ],
+              "winner": null
+            },
+            {
+              "id": "W145-R1-S7",
+              "round": 1,
+              "type": "match",
+              "wrestlers": [
+                "School 9",
+                "School 10"
+              ],
+              "winner": null
+            },
+            {
+              "id": "W145-R1-S8",
+              "round": 1,
+              "type": "match",
+              "wrestlers": [
+                "School 11",
+                "School 12"
+              ],
+              "winner": null
+            }
+          ]
+        },
+        {
+          "round": 2,
+          "slots": [
+            {
+              "id": "W145-R2-S1",
+              "round": 2,
+              "type": "placeholder",
+              "fed_by": [
+                "W145-R1-S1",
+                "W145-R1-S2"
+              ],
+              "participants": [
+                "School 1",
+                "School 3"
+              ],
+              "winner": null
+            },
+            {
+              "id": "W145-R2-S2",
+              "round": 2,
+              "type": "placeholder",
+              "fed_by": [
+                "W145-R1-S3",
+                "W145-R1-S4"
+              ],
+              "participants": [
+                "School 4",
+                "School 5"
+              ],
+              "winner": null
+            },
+            {
+              "id": "W145-R2-S3",
+              "round": 2,
+              "type": "placeholder",
+              "fed_by": [
+                "W145-R1-S5",
+                "W145-R1-S6"
+              ],
+              "participants": [
+                "School 6",
+                null
+              ],
+              "winner": null
+            },
+            {
+              "id": "W145-R2-S4",
+              "round": 2,
+              "type": "placeholder",
+              "fed_by": [
+                "W145-R1-S7",
+                "W145-R1-S8"
+              ],
+              "participants": [
+                null,
+                null
+              ],
+              "winner": null
+            }
+          ]
+        },
+        {
+          "round": 3,
+          "slots": [
+            {
+              "id": "W145-R3-S1",
+              "round": 3,
+              "type": "placeholder",
+              "fed_by": [
+                "W145-R2-S1",
+                "W145-R2-S2"
+              ],
+              "participants": [
+                null,
+                null
+              ],
+              "winner": null
+            },
+            {
+              "id": "W145-R3-S2",
+              "round": 3,
+              "type": "placeholder",
+              "fed_by": [
+                "W145-R2-S3",
+                "W145-R2-S4"
+              ],
+              "participants": [
+                null,
+                null
+              ],
+              "winner": null
+            }
+          ]
+        },
+        {
+          "round": 4,
+          "slots": [
+            {
+              "id": "W145-R4-S1",
+              "round": 4,
+              "type": "placeholder",
+              "fed_by": [
+                "W145-R3-S1",
+                "W145-R3-S2"
+              ],
+              "participants": [
+                null,
+                null
+              ],
+              "winner": null
+            }
+          ]
+        }
+      ],
+      "champion": null
+    },
+    "152": {
+      "weight": 152,
+      "entrants": [
+        "School 1",
+        "School 3",
+        "School 5",
+        "School 6",
+        "School 7",
+        "School 8",
+        "School 10",
+        "School 12"
+      ],
+      "entrant_ids": [
+        "School 1 @ 152",
+        "School 3 @ 152",
+        "School 5 @ 152",
+        "School 6 @ 152",
+        "School 7 @ 152",
+        "School 8 @ 152",
+        "School 10 @ 152",
+        "School 12 @ 152"
+      ],
+      "n_entrants": 8,
+      "bracket_size": 8,
+      "byes": 0,
+      "projected_contested_matches": 7,
+      "placement": "synthetic deterministic placement in roster order (unseeded); not official NFHS seeding or bye distribution",
+      "positions": [
+        "School 1",
+        "School 3",
+        "School 5",
+        "School 6",
+        "School 7",
+        "School 8",
+        "School 10",
+        "School 12"
+      ],
+      "rounds": [
+        {
+          "round": 1,
+          "slots": [
+            {
+              "id": "W152-R1-S1",
+              "round": 1,
+              "type": "match",
+              "wrestlers": [
+                "School 1",
+                "School 3"
+              ],
+              "winner": null
+            },
+            {
+              "id": "W152-R1-S2",
+              "round": 1,
+              "type": "match",
+              "wrestlers": [
+                "School 5",
+                "School 6"
+              ],
+              "winner": null
+            },
+            {
+              "id": "W152-R1-S3",
+              "round": 1,
+              "type": "match",
+              "wrestlers": [
+                "School 7",
+                "School 8"
+              ],
+              "winner": null
+            },
+            {
+              "id": "W152-R1-S4",
+              "round": 1,
+              "type": "match",
+              "wrestlers": [
+                "School 10",
+                "School 12"
+              ],
+              "winner": null
+            }
+          ]
+        },
+        {
+          "round": 2,
+          "slots": [
+            {
+              "id": "W152-R2-S1",
+              "round": 2,
+              "type": "placeholder",
+              "fed_by": [
+                "W152-R1-S1",
+                "W152-R1-S2"
+              ],
+              "participants": [
+                null,
+                null
+              ],
+              "winner": null
+            },
+            {
+              "id": "W152-R2-S2",
+              "round": 2,
+              "type": "placeholder",
+              "fed_by": [
+                "W152-R1-S3",
+                "W152-R1-S4"
+              ],
+              "participants": [
+                null,
+                null
+              ],
+              "winner": null
+            }
+          ]
+        },
+        {
+          "round": 3,
+          "slots": [
+            {
+              "id": "W152-R3-S1",
+              "round": 3,
+              "type": "placeholder",
+              "fed_by": [
+                "W152-R2-S1",
+                "W152-R2-S2"
+              ],
+              "participants": [
+                null,
+                null
+              ],
+              "winner": null
+            }
+          ]
+        }
+      ],
+      "champion": null
+    },
+    "160": {
+      "weight": 160,
+      "entrants": [
+        "School 2",
+        "School 3",
+        "School 5",
+        "School 7",
+        "School 8",
+        "School 11",
+        "School 12"
+      ],
+      "entrant_ids": [
+        "School 2 @ 160",
+        "School 3 @ 160",
+        "School 5 @ 160",
+        "School 7 @ 160",
+        "School 8 @ 160",
+        "School 11 @ 160",
+        "School 12 @ 160"
+      ],
+      "n_entrants": 7,
+      "bracket_size": 8,
+      "byes": 1,
+      "projected_contested_matches": 6,
+      "placement": "synthetic deterministic placement in roster order (unseeded); not official NFHS seeding or bye distribution",
+      "positions": [
+        "School 2",
+        null,
+        "School 3",
+        "School 5",
+        "School 7",
+        "School 8",
+        "School 11",
+        "School 12"
+      ],
+      "rounds": [
+        {
+          "round": 1,
+          "slots": [
+            {
+              "id": "W160-R1-S1",
+              "round": 1,
+              "type": "bye",
+              "wrestlers": [
+                "School 2",
+                null
+              ],
+              "advances": "School 2"
+            },
+            {
+              "id": "W160-R1-S2",
+              "round": 1,
+              "type": "match",
+              "wrestlers": [
+                "School 3",
+                "School 5"
+              ],
+              "winner": null
+            },
+            {
+              "id": "W160-R1-S3",
+              "round": 1,
+              "type": "match",
+              "wrestlers": [
+                "School 7",
+                "School 8"
+              ],
+              "winner": null
+            },
+            {
+              "id": "W160-R1-S4",
+              "round": 1,
+              "type": "match",
+              "wrestlers": [
+                "School 11",
+                "School 12"
+              ],
+              "winner": null
+            }
+          ]
+        },
+        {
+          "round": 2,
+          "slots": [
+            {
+              "id": "W160-R2-S1",
+              "round": 2,
+              "type": "placeholder",
+              "fed_by": [
+                "W160-R1-S1",
+                "W160-R1-S2"
+              ],
+              "participants": [
+                "School 2",
+                null
+              ],
+              "winner": null
+            },
+            {
+              "id": "W160-R2-S2",
+              "round": 2,
+              "type": "placeholder",
+              "fed_by": [
+                "W160-R1-S3",
+                "W160-R1-S4"
+              ],
+              "participants": [
+                null,
+                null
+              ],
+              "winner": null
+            }
+          ]
+        },
+        {
+          "round": 3,
+          "slots": [
+            {
+              "id": "W160-R3-S1",
+              "round": 3,
+              "type": "placeholder",
+              "fed_by": [
+                "W160-R2-S1",
+                "W160-R2-S2"
+              ],
+              "participants": [
+                null,
+                null
+              ],
+              "winner": null
+            }
+          ]
+        }
+      ],
+      "champion": null
+    },
+    "170": {
+      "weight": 170,
+      "entrants": [
+        "School 1",
+        "School 3",
+        "School 4",
+        "School 7",
+        "School 9",
+        "School 10",
+        "School 11",
+        "School 12"
+      ],
+      "entrant_ids": [
+        "School 1 @ 170",
+        "School 3 @ 170",
+        "School 4 @ 170",
+        "School 7 @ 170",
+        "School 9 @ 170",
+        "School 10 @ 170",
+        "School 11 @ 170",
+        "School 12 @ 170"
+      ],
+      "n_entrants": 8,
+      "bracket_size": 8,
+      "byes": 0,
+      "projected_contested_matches": 7,
+      "placement": "synthetic deterministic placement in roster order (unseeded); not official NFHS seeding or bye distribution",
+      "positions": [
+        "School 1",
+        "School 3",
+        "School 4",
+        "School 7",
+        "School 9",
+        "School 10",
+        "School 11",
+        "School 12"
+      ],
+      "rounds": [
+        {
+          "round": 1,
+          "slots": [
+            {
+              "id": "W170-R1-S1",
+              "round": 1,
+              "type": "match",
+              "wrestlers": [
+                "School 1",
+                "School 3"
+              ],
+              "winner": null
+            },
+            {
+              "id": "W170-R1-S2",
+              "round": 1,
+              "type": "match",
+              "wrestlers": [
+                "School 4",
+                "School 7"
+              ],
+              "winner": null
+            },
+            {
+              "id": "W170-R1-S3",
+              "round": 1,
+              "type": "match",
+              "wrestlers": [
+                "School 9",
+                "School 10"
+              ],
+              "winner": null
+            },
+            {
+              "id": "W170-R1-S4",
+              "round": 1,
+              "type": "match",
+              "wrestlers": [
+                "School 11",
+                "School 12"
+              ],
+              "winner": null
+            }
+          ]
+        },
+        {
+          "round": 2,
+          "slots": [
+            {
+              "id": "W170-R2-S1",
+              "round": 2,
+              "type": "placeholder",
+              "fed_by": [
+                "W170-R1-S1",
+                "W170-R1-S2"
+              ],
+              "participants": [
+                null,
+                null
+              ],
+              "winner": null
+            },
+            {
+              "id": "W170-R2-S2",
+              "round": 2,
+              "type": "placeholder",
+              "fed_by": [
+                "W170-R1-S3",
+                "W170-R1-S4"
+              ],
+              "participants": [
+                null,
+                null
+              ],
+              "winner": null
+            }
+          ]
+        },
+        {
+          "round": 3,
+          "slots": [
+            {
+              "id": "W170-R3-S1",
+              "round": 3,
+              "type": "placeholder",
+              "fed_by": [
+                "W170-R2-S1",
+                "W170-R2-S2"
+              ],
+              "participants": [
+                null,
+                null
+              ],
+              "winner": null
+            }
+          ]
+        }
+      ],
+      "champion": null
+    },
+    "182": {
+      "weight": 182,
+      "entrants": [
+        "School 1",
+        "School 2",
+        "School 3",
+        "School 4",
+        "School 6",
+        "School 7",
+        "School 8",
+        "School 10",
+        "School 11",
+        "School 12"
+      ],
+      "entrant_ids": [
+        "School 1 @ 182",
+        "School 2 @ 182",
+        "School 3 @ 182",
+        "School 4 @ 182",
+        "School 6 @ 182",
+        "School 7 @ 182",
+        "School 8 @ 182",
+        "School 10 @ 182",
+        "School 11 @ 182",
+        "School 12 @ 182"
+      ],
+      "n_entrants": 10,
+      "bracket_size": 16,
+      "byes": 6,
+      "projected_contested_matches": 9,
+      "placement": "synthetic deterministic placement in roster order (unseeded); not official NFHS seeding or bye distribution",
+      "positions": [
+        "School 1",
+        null,
+        "School 2",
+        null,
+        "School 3",
+        null,
+        "School 4",
+        null,
+        "School 6",
+        null,
+        "School 7",
+        null,
+        "School 8",
+        "School 10",
+        "School 11",
+        "School 12"
+      ],
+      "rounds": [
+        {
+          "round": 1,
+          "slots": [
+            {
+              "id": "W182-R1-S1",
+              "round": 1,
+              "type": "bye",
+              "wrestlers": [
+                "School 1",
+                null
+              ],
+              "advances": "School 1"
+            },
+            {
+              "id": "W182-R1-S2",
+              "round": 1,
+              "type": "bye",
+              "wrestlers": [
+                "School 2",
+                null
+              ],
+              "advances": "School 2"
+            },
+            {
+              "id": "W182-R1-S3",
+              "round": 1,
+              "type": "bye",
+              "wrestlers": [
+                "School 3",
+                null
+              ],
+              "advances": "School 3"
+            },
+            {
+              "id": "W182-R1-S4",
+              "round": 1,
+              "type": "bye",
+              "wrestlers": [
+                "School 4",
+                null
+              ],
+              "advances": "School 4"
+            },
+            {
+              "id": "W182-R1-S5",
+              "round": 1,
+              "type": "bye",
+              "wrestlers": [
+                "School 6",
+                null
+              ],
+              "advances": "School 6"
+            },
+            {
+              "id": "W182-R1-S6",
+              "round": 1,
+              "type": "bye",
+              "wrestlers": [
+                "School 7",
+                null
+              ],
+              "advances": "School 7"
+            },
+            {
+              "id": "W182-R1-S7",
+              "round": 1,
+              "type": "match",
+              "wrestlers": [
+                "School 8",
+                "School 10"
+              ],
+              "winner": null
+            },
+            {
+              "id": "W182-R1-S8",
+              "round": 1,
+              "type": "match",
+              "wrestlers": [
+                "School 11",
+                "School 12"
+              ],
+              "winner": null
+            }
+          ]
+        },
+        {
+          "round": 2,
+          "slots": [
+            {
+              "id": "W182-R2-S1",
+              "round": 2,
+              "type": "placeholder",
+              "fed_by": [
+                "W182-R1-S1",
+                "W182-R1-S2"
+              ],
+              "participants": [
+                "School 1",
+                "School 2"
+              ],
+              "winner": null
+            },
+            {
+              "id": "W182-R2-S2",
+              "round": 2,
+              "type": "placeholder",
+              "fed_by": [
+                "W182-R1-S3",
+                "W182-R1-S4"
+              ],
+              "participants": [
+                "School 3",
+                "School 4"
+              ],
+              "winner": null
+            },
+            {
+              "id": "W182-R2-S3",
+              "round": 2,
+              "type": "placeholder",
+              "fed_by": [
+                "W182-R1-S5",
+                "W182-R1-S6"
+              ],
+              "participants": [
+                "School 6",
+                "School 7"
+              ],
+              "winner": null
+            },
+            {
+              "id": "W182-R2-S4",
+              "round": 2,
+              "type": "placeholder",
+              "fed_by": [
+                "W182-R1-S7",
+                "W182-R1-S8"
+              ],
+              "participants": [
+                null,
+                null
+              ],
+              "winner": null
+            }
+          ]
+        },
+        {
+          "round": 3,
+          "slots": [
+            {
+              "id": "W182-R3-S1",
+              "round": 3,
+              "type": "placeholder",
+              "fed_by": [
+                "W182-R2-S1",
+                "W182-R2-S2"
+              ],
+              "participants": [
+                null,
+                null
+              ],
+              "winner": null
+            },
+            {
+              "id": "W182-R3-S2",
+              "round": 3,
+              "type": "placeholder",
+              "fed_by": [
+                "W182-R2-S3",
+                "W182-R2-S4"
+              ],
+              "participants": [
+                null,
+                null
+              ],
+              "winner": null
+            }
+          ]
+        },
+        {
+          "round": 4,
+          "slots": [
+            {
+              "id": "W182-R4-S1",
+              "round": 4,
+              "type": "placeholder",
+              "fed_by": [
+                "W182-R3-S1",
+                "W182-R3-S2"
+              ],
+              "participants": [
+                null,
+                null
+              ],
+              "winner": null
+            }
+          ]
+        }
+      ],
+      "champion": null
+    },
+    "195": {
+      "weight": 195,
+      "entrants": [
+        "School 1",
+        "School 2",
+        "School 3",
+        "School 4",
+        "School 5",
+        "School 6",
+        "School 7",
+        "School 9",
+        "School 10",
+        "School 11",
+        "School 12"
+      ],
+      "entrant_ids": [
+        "School 1 @ 195",
+        "School 2 @ 195",
+        "School 3 @ 195",
+        "School 4 @ 195",
+        "School 5 @ 195",
+        "School 6 @ 195",
+        "School 7 @ 195",
+        "School 9 @ 195",
+        "School 10 @ 195",
+        "School 11 @ 195",
+        "School 12 @ 195"
+      ],
+      "n_entrants": 11,
+      "bracket_size": 16,
+      "byes": 5,
+      "projected_contested_matches": 10,
+      "placement": "synthetic deterministic placement in roster order (unseeded); not official NFHS seeding or bye distribution",
+      "positions": [
+        "School 1",
+        null,
+        "School 2",
+        null,
+        "School 3",
+        null,
+        "School 4",
+        null,
+        "School 5",
+        null,
+        "School 6",
+        "School 7",
+        "School 9",
+        "School 10",
+        "School 11",
+        "School 12"
+      ],
+      "rounds": [
+        {
+          "round": 1,
+          "slots": [
+            {
+              "id": "W195-R1-S1",
+              "round": 1,
+              "type": "bye",
+              "wrestlers": [
+                "School 1",
+                null
+              ],
+              "advances": "School 1"
+            },
+            {
+              "id": "W195-R1-S2",
+              "round": 1,
+              "type": "bye",
+              "wrestlers": [
+                "School 2",
+                null
+              ],
+              "advances": "School 2"
+            },
+            {
+              "id": "W195-R1-S3",
+              "round": 1,
+              "type": "bye",
+              "wrestlers": [
+                "School 3",
+                null
+              ],
+              "advances": "School 3"
+            },
+            {
+              "id": "W195-R1-S4",
+              "round": 1,
+              "type": "bye",
+              "wrestlers": [
+                "School 4",
+                null
+              ],
+              "advances": "School 4"
+            },
+            {
+              "id": "W195-R1-S5",
+              "round": 1,
+              "type": "bye",
+              "wrestlers": [
+                "School 5",
+                null
+              ],
+              "advances": "School 5"
+            },
+            {
+              "id": "W195-R1-S6",
+              "round": 1,
+              "type": "match",
+              "wrestlers": [
+                "School 6",
+                "School 7"
+              ],
+              "winner": null
+            },
+            {
+              "id": "W195-R1-S7",
+              "round": 1,
+              "type": "match",
+              "wrestlers": [
+                "School 9",
+                "School 10"
+              ],
+              "winner": null
+            },
+            {
+              "id": "W195-R1-S8",
+              "round": 1,
+              "type": "match",
+              "wrestlers": [
+                "School 11",
+                "School 12"
+              ],
+              "winner": null
+            }
+          ]
+        },
+        {
+          "round": 2,
+          "slots": [
+            {
+              "id": "W195-R2-S1",
+              "round": 2,
+              "type": "placeholder",
+              "fed_by": [
+                "W195-R1-S1",
+                "W195-R1-S2"
+              ],
+              "participants": [
+                "School 1",
+                "School 2"
+              ],
+              "winner": null
+            },
+            {
+              "id": "W195-R2-S2",
+              "round": 2,
+              "type": "placeholder",
+              "fed_by": [
+                "W195-R1-S3",
+                "W195-R1-S4"
+              ],
+              "participants": [
+                "School 3",
+                "School 4"
+              ],
+              "winner": null
+            },
+            {
+              "id": "W195-R2-S3",
+              "round": 2,
+              "type": "placeholder",
+              "fed_by": [
+                "W195-R1-S5",
+                "W195-R1-S6"
+              ],
+              "participants": [
+                "School 5",
+                null
+              ],
+              "winner": null
+            },
+            {
+              "id": "W195-R2-S4",
+              "round": 2,
+              "type": "placeholder",
+              "fed_by": [
+                "W195-R1-S7",
+                "W195-R1-S8"
+              ],
+              "participants": [
+                null,
+                null
+              ],
+              "winner": null
+            }
+          ]
+        },
+        {
+          "round": 3,
+          "slots": [
+            {
+              "id": "W195-R3-S1",
+              "round": 3,
+              "type": "placeholder",
+              "fed_by": [
+                "W195-R2-S1",
+                "W195-R2-S2"
+              ],
+              "participants": [
+                null,
+                null
+              ],
+              "winner": null
+            },
+            {
+              "id": "W195-R3-S2",
+              "round": 3,
+              "type": "placeholder",
+              "fed_by": [
+                "W195-R2-S3",
+                "W195-R2-S4"
+              ],
+              "participants": [
+                null,
+                null
+              ],
+              "winner": null
+            }
+          ]
+        },
+        {
+          "round": 4,
+          "slots": [
+            {
+              "id": "W195-R4-S1",
+              "round": 4,
+              "type": "placeholder",
+              "fed_by": [
+                "W195-R3-S1",
+                "W195-R3-S2"
+              ],
+              "participants": [
+                null,
+                null
+              ],
+              "winner": null
+            }
+          ]
+        }
+      ],
+      "champion": null
+    },
+    "220": {
+      "weight": 220,
+      "entrants": [
+        "School 1",
+        "School 4",
+        "School 5",
+        "School 6",
+        "School 7",
+        "School 8",
+        "School 10",
+        "School 11",
+        "School 12"
+      ],
+      "entrant_ids": [
+        "School 1 @ 220",
+        "School 4 @ 220",
+        "School 5 @ 220",
+        "School 6 @ 220",
+        "School 7 @ 220",
+        "School 8 @ 220",
+        "School 10 @ 220",
+        "School 11 @ 220",
+        "School 12 @ 220"
+      ],
+      "n_entrants": 9,
+      "bracket_size": 16,
+      "byes": 7,
+      "projected_contested_matches": 8,
+      "placement": "synthetic deterministic placement in roster order (unseeded); not official NFHS seeding or bye distribution",
+      "positions": [
+        "School 1",
+        null,
+        "School 4",
+        null,
+        "School 5",
+        null,
+        "School 6",
+        null,
+        "School 7",
+        null,
+        "School 8",
+        null,
+        "School 10",
+        null,
+        "School 11",
+        "School 12"
+      ],
+      "rounds": [
+        {
+          "round": 1,
+          "slots": [
+            {
+              "id": "W220-R1-S1",
+              "round": 1,
+              "type": "bye",
+              "wrestlers": [
+                "School 1",
+                null
+              ],
+              "advances": "School 1"
+            },
+            {
+              "id": "W220-R1-S2",
+              "round": 1,
+              "type": "bye",
+              "wrestlers": [
+                "School 4",
+                null
+              ],
+              "advances": "School 4"
+            },
+            {
+              "id": "W220-R1-S3",
+              "round": 1,
+              "type": "bye",
+              "wrestlers": [
+                "School 5",
+                null
+              ],
+              "advances": "School 5"
+            },
+            {
+              "id": "W220-R1-S4",
+              "round": 1,
+              "type": "bye",
+              "wrestlers": [
+                "School 6",
+                null
+              ],
+              "advances": "School 6"
+            },
+            {
+              "id": "W220-R1-S5",
+              "round": 1,
+              "type": "bye",
+              "wrestlers": [
+                "School 7",
+                null
+              ],
+              "advances": "School 7"
+            },
+            {
+              "id": "W220-R1-S6",
+              "round": 1,
+              "type": "bye",
+              "wrestlers": [
+                "School 8",
+                null
+              ],
+              "advances": "School 8"
+            },
+            {
+              "id": "W220-R1-S7",
+              "round": 1,
+              "type": "bye",
+              "wrestlers": [
+                "School 10",
+                null
+              ],
+              "advances": "School 10"
+            },
+            {
+              "id": "W220-R1-S8",
+              "round": 1,
+              "type": "match",
+              "wrestlers": [
+                "School 11",
+                "School 12"
+              ],
+              "winner": null
+            }
+          ]
+        },
+        {
+          "round": 2,
+          "slots": [
+            {
+              "id": "W220-R2-S1",
+              "round": 2,
+              "type": "placeholder",
+              "fed_by": [
+                "W220-R1-S1",
+                "W220-R1-S2"
+              ],
+              "participants": [
+                "School 1",
+                "School 4"
+              ],
+              "winner": null
+            },
+            {
+              "id": "W220-R2-S2",
+              "round": 2,
+              "type": "placeholder",
+              "fed_by": [
+                "W220-R1-S3",
+                "W220-R1-S4"
+              ],
+              "participants": [
+                "School 5",
+                "School 6"
+              ],
+              "winner": null
+            },
+            {
+              "id": "W220-R2-S3",
+              "round": 2,
+              "type": "placeholder",
+              "fed_by": [
+                "W220-R1-S5",
+                "W220-R1-S6"
+              ],
+              "participants": [
+                "School 7",
+                "School 8"
+              ],
+              "winner": null
+            },
+            {
+              "id": "W220-R2-S4",
+              "round": 2,
+              "type": "placeholder",
+              "fed_by": [
+                "W220-R1-S7",
+                "W220-R1-S8"
+              ],
+              "participants": [
+                "School 10",
+                null
+              ],
+              "winner": null
+            }
+          ]
+        },
+        {
+          "round": 3,
+          "slots": [
+            {
+              "id": "W220-R3-S1",
+              "round": 3,
+              "type": "placeholder",
+              "fed_by": [
+                "W220-R2-S1",
+                "W220-R2-S2"
+              ],
+              "participants": [
+                null,
+                null
+              ],
+              "winner": null
+            },
+            {
+              "id": "W220-R3-S2",
+              "round": 3,
+              "type": "placeholder",
+              "fed_by": [
+                "W220-R2-S3",
+                "W220-R2-S4"
+              ],
+              "participants": [
+                null,
+                null
+              ],
+              "winner": null
+            }
+          ]
+        },
+        {
+          "round": 4,
+          "slots": [
+            {
+              "id": "W220-R4-S1",
+              "round": 4,
+              "type": "placeholder",
+              "fed_by": [
+                "W220-R3-S1",
+                "W220-R3-S2"
+              ],
+              "participants": [
+                null,
+                null
+              ],
+              "winner": null
+            }
+          ]
+        }
+      ],
+      "champion": null
+    },
+    "285": {
+      "weight": 285,
+      "entrants": [
+        "School 1",
+        "School 2",
+        "School 3",
+        "School 4",
+        "School 5",
+        "School 7",
+        "School 9",
+        "School 11",
+        "School 12"
+      ],
+      "entrant_ids": [
+        "School 1 @ 285",
+        "School 2 @ 285",
+        "School 3 @ 285",
+        "School 4 @ 285",
+        "School 5 @ 285",
+        "School 7 @ 285",
+        "School 9 @ 285",
+        "School 11 @ 285",
+        "School 12 @ 285"
+      ],
+      "n_entrants": 9,
+      "bracket_size": 16,
+      "byes": 7,
+      "projected_contested_matches": 8,
+      "placement": "synthetic deterministic placement in roster order (unseeded); not official NFHS seeding or bye distribution",
+      "positions": [
+        "School 1",
+        null,
+        "School 2",
+        null,
+        "School 3",
+        null,
+        "School 4",
+        null,
+        "School 5",
+        null,
+        "School 7",
+        null,
+        "School 9",
+        null,
+        "School 11",
+        "School 12"
+      ],
+      "rounds": [
+        {
+          "round": 1,
+          "slots": [
+            {
+              "id": "W285-R1-S1",
+              "round": 1,
+              "type": "bye",
+              "wrestlers": [
+                "School 1",
+                null
+              ],
+              "advances": "School 1"
+            },
+            {
+              "id": "W285-R1-S2",
+              "round": 1,
+              "type": "bye",
+              "wrestlers": [
+                "School 2",
+                null
+              ],
+              "advances": "School 2"
+            },
+            {
+              "id": "W285-R1-S3",
+              "round": 1,
+              "type": "bye",
+              "wrestlers": [
+                "School 3",
+                null
+              ],
+              "advances": "School 3"
+            },
+            {
+              "id": "W285-R1-S4",
+              "round": 1,
+              "type": "bye",
+              "wrestlers": [
+                "School 4",
+                null
+              ],
+              "advances": "School 4"
+            },
+            {
+              "id": "W285-R1-S5",
+              "round": 1,
+              "type": "bye",
+              "wrestlers": [
+                "School 5",
+                null
+              ],
+              "advances": "School 5"
+            },
+            {
+              "id": "W285-R1-S6",
+              "round": 1,
+              "type": "bye",
+              "wrestlers": [
+                "School 7",
+                null
+              ],
+              "advances": "School 7"
+            },
+            {
+              "id": "W285-R1-S7",
+              "round": 1,
+              "type": "bye",
+              "wrestlers": [
+                "School 9",
+                null
+              ],
+              "advances": "School 9"
+            },
+            {
+              "id": "W285-R1-S8",
+              "round": 1,
+              "type": "match",
+              "wrestlers": [
+                "School 11",
+                "School 12"
+              ],
+              "winner": null
+            }
+          ]
+        },
+        {
+          "round": 2,
+          "slots": [
+            {
+              "id": "W285-R2-S1",
+              "round": 2,
+              "type": "placeholder",
+              "fed_by": [
+                "W285-R1-S1",
+                "W285-R1-S2"
+              ],
+              "participants": [
+                "School 1",
+                "School 2"
+              ],
+              "winner": null
+            },
+            {
+              "id": "W285-R2-S2",
+              "round": 2,
+              "type": "placeholder",
+              "fed_by": [
+                "W285-R1-S3",
+                "W285-R1-S4"
+              ],
+              "participants": [
+                "School 3",
+                "School 4"
+              ],
+              "winner": null
+            },
+            {
+              "id": "W285-R2-S3",
+              "round": 2,
+              "type": "placeholder",
+              "fed_by": [
+                "W285-R1-S5",
+                "W285-R1-S6"
+              ],
+              "participants": [
+                "School 5",
+                "School 7"
+              ],
+              "winner": null
+            },
+            {
+              "id": "W285-R2-S4",
+              "round": 2,
+              "type": "placeholder",
+              "fed_by": [
+                "W285-R1-S7",
+                "W285-R1-S8"
+              ],
+              "participants": [
+                "School 9",
+                null
+              ],
+              "winner": null
+            }
+          ]
+        },
+        {
+          "round": 3,
+          "slots": [
+            {
+              "id": "W285-R3-S1",
+              "round": 3,
+              "type": "placeholder",
+              "fed_by": [
+                "W285-R2-S1",
+                "W285-R2-S2"
+              ],
+              "participants": [
+                null,
+                null
+              ],
+              "winner": null
+            },
+            {
+              "id": "W285-R3-S2",
+              "round": 3,
+              "type": "placeholder",
+              "fed_by": [
+                "W285-R2-S3",
+                "W285-R2-S4"
+              ],
+              "participants": [
+                null,
+                null
+              ],
+              "winner": null
+            }
+          ]
+        },
+        {
+          "round": 4,
+          "slots": [
+            {
+              "id": "W285-R4-S1",
+              "round": 4,
+              "type": "placeholder",
+              "fed_by": [
+                "W285-R3-S1",
+                "W285-R3-S2"
+              ],
+              "participants": [
+                null,
+                null
+              ],
+              "winner": null
+            }
+          ]
+        }
+      ],
+      "champion": null
+    }
+  },
+  "summary": {
+    "total_schools": 12,
+    "total_wrestlers": 132,
+    "total_missing_positions": 36,
+    "total_byes": 60,
+    "total_projected_contested_matches": 118,
+    "n_brackets": 14
+  }
+}

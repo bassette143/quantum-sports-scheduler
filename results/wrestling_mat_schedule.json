@@ -1,0 +1,495 @@
+{
+  "experiment": "wrestling_mat_schedule_phase_w3",
+  "settings": {
+    "seed": 42,
+    "n_mats": 6,
+    "rest_slots": 1,
+    "algorithm": "deterministic greedy list scheduling (heuristic)"
+  },
+  "assignments": {
+    "W106-R1-S7": {
+      "mat": 1,
+      "slot": 1
+    },
+    "W106-R1-S8": {
+      "mat": 2,
+      "slot": 1
+    },
+    "W113-R1-S6": {
+      "mat": 3,
+      "slot": 1
+    },
+    "W113-R1-S7": {
+      "mat": 4,
+      "slot": 1
+    },
+    "W113-R1-S8": {
+      "mat": 5,
+      "slot": 1
+    },
+    "W120-R1-S2": {
+      "mat": 6,
+      "slot": 1
+    },
+    "W120-R1-S3": {
+      "mat": 1,
+      "slot": 2
+    },
+    "W120-R1-S4": {
+      "mat": 2,
+      "slot": 2
+    },
+    "W126-R1-S6": {
+      "mat": 3,
+      "slot": 2
+    },
+    "W126-R1-S7": {
+      "mat": 4,
+      "slot": 2
+    },
+    "W126-R1-S8": {
+      "mat": 5,
+      "slot": 2
+    },
+    "W132-R1-S7": {
+      "mat": 6,
+      "slot": 2
+    },
+    "W132-R1-S8": {
+      "mat": 1,
+      "slot": 3
+    },
+    "W138-R1-S7": {
+      "mat": 2,
+      "slot": 3
+    },
+    "W138-R1-S8": {
+      "mat": 3,
+      "slot": 3
+    },
+    "W145-R1-S6": {
+      "mat": 4,
+      "slot": 3
+    },
+    "W145-R1-S7": {
+      "mat": 5,
+      "slot": 3
+    },
+    "W145-R1-S8": {
+      "mat": 6,
+      "slot": 3
+    },
+    "W152-R1-S1": {
+      "mat": 1,
+      "slot": 4
+    },
+    "W152-R1-S2": {
+      "mat": 2,
+      "slot": 4
+    },
+    "W152-R1-S3": {
+      "mat": 3,
+      "slot": 4
+    },
+    "W152-R1-S4": {
+      "mat": 4,
+      "slot": 4
+    },
+    "W160-R1-S2": {
+      "mat": 5,
+      "slot": 4
+    },
+    "W160-R1-S3": {
+      "mat": 6,
+      "slot": 4
+    },
+    "W160-R1-S4": {
+      "mat": 1,
+      "slot": 5
+    },
+    "W170-R1-S1": {
+      "mat": 2,
+      "slot": 5
+    },
+    "W170-R1-S2": {
+      "mat": 3,
+      "slot": 5
+    },
+    "W170-R1-S3": {
+      "mat": 4,
+      "slot": 5
+    },
+    "W170-R1-S4": {
+      "mat": 5,
+      "slot": 5
+    },
+    "W182-R1-S7": {
+      "mat": 6,
+      "slot": 5
+    },
+    "W182-R1-S8": {
+      "mat": 1,
+      "slot": 6
+    },
+    "W195-R1-S6": {
+      "mat": 2,
+      "slot": 6
+    },
+    "W195-R1-S7": {
+      "mat": 3,
+      "slot": 6
+    },
+    "W195-R1-S8": {
+      "mat": 4,
+      "slot": 6
+    },
+    "W220-R1-S8": {
+      "mat": 5,
+      "slot": 6
+    },
+    "W285-R1-S8": {
+      "mat": 6,
+      "slot": 6
+    },
+    "W106-R2-S1": {
+      "mat": 1,
+      "slot": 7
+    },
+    "W106-R2-S2": {
+      "mat": 2,
+      "slot": 7
+    },
+    "W106-R2-S3": {
+      "mat": 3,
+      "slot": 7
+    },
+    "W106-R2-S4": {
+      "mat": 4,
+      "slot": 7
+    },
+    "W113-R2-S1": {
+      "mat": 5,
+      "slot": 7
+    },
+    "W113-R2-S2": {
+      "mat": 6,
+      "slot": 7
+    },
+    "W113-R2-S3": {
+      "mat": 1,
+      "slot": 8
+    },
+    "W113-R2-S4": {
+      "mat": 2,
+      "slot": 8
+    },
+    "W120-R2-S1": {
+      "mat": 3,
+      "slot": 8
+    },
+    "W120-R2-S2": {
+      "mat": 4,
+      "slot": 8
+    },
+    "W126-R2-S1": {
+      "mat": 5,
+      "slot": 8
+    },
+    "W126-R2-S2": {
+      "mat": 6,
+      "slot": 8
+    },
+    "W126-R2-S3": {
+      "mat": 1,
+      "slot": 9
+    },
+    "W126-R2-S4": {
+      "mat": 2,
+      "slot": 9
+    },
+    "W132-R2-S1": {
+      "mat": 3,
+      "slot": 9
+    },
+    "W132-R2-S2": {
+      "mat": 4,
+      "slot": 9
+    },
+    "W132-R2-S3": {
+      "mat": 5,
+      "slot": 9
+    },
+    "W132-R2-S4": {
+      "mat": 6,
+      "slot": 9
+    },
+    "W138-R2-S1": {
+      "mat": 1,
+      "slot": 10
+    },
+    "W138-R2-S2": {
+      "mat": 2,
+      "slot": 10
+    },
+    "W138-R2-S3": {
+      "mat": 3,
+      "slot": 10
+    },
+    "W138-R2-S4": {
+      "mat": 4,
+      "slot": 10
+    },
+    "W145-R2-S1": {
+      "mat": 5,
+      "slot": 10
+    },
+    "W145-R2-S2": {
+      "mat": 6,
+      "slot": 10
+    },
+    "W145-R2-S3": {
+      "mat": 1,
+      "slot": 11
+    },
+    "W145-R2-S4": {
+      "mat": 2,
+      "slot": 11
+    },
+    "W152-R2-S1": {
+      "mat": 3,
+      "slot": 11
+    },
+    "W152-R2-S2": {
+      "mat": 4,
+      "slot": 11
+    },
+    "W160-R2-S1": {
+      "mat": 5,
+      "slot": 11
+    },
+    "W160-R2-S2": {
+      "mat": 6,
+      "slot": 11
+    },
+    "W170-R2-S1": {
+      "mat": 1,
+      "slot": 12
+    },
+    "W170-R2-S2": {
+      "mat": 2,
+      "slot": 12
+    },
+    "W182-R2-S1": {
+      "mat": 3,
+      "slot": 12
+    },
+    "W182-R2-S2": {
+      "mat": 4,
+      "slot": 12
+    },
+    "W182-R2-S3": {
+      "mat": 5,
+      "slot": 12
+    },
+    "W182-R2-S4": {
+      "mat": 6,
+      "slot": 12
+    },
+    "W195-R2-S1": {
+      "mat": 1,
+      "slot": 13
+    },
+    "W195-R2-S2": {
+      "mat": 2,
+      "slot": 13
+    },
+    "W195-R2-S3": {
+      "mat": 3,
+      "slot": 13
+    },
+    "W195-R2-S4": {
+      "mat": 4,
+      "slot": 13
+    },
+    "W220-R2-S1": {
+      "mat": 5,
+      "slot": 13
+    },
+    "W220-R2-S2": {
+      "mat": 6,
+      "slot": 13
+    },
+    "W220-R2-S3": {
+      "mat": 1,
+      "slot": 14
+    },
+    "W220-R2-S4": {
+      "mat": 2,
+      "slot": 14
+    },
+    "W285-R2-S1": {
+      "mat": 3,
+      "slot": 14
+    },
+    "W285-R2-S2": {
+      "mat": 4,
+      "slot": 14
+    },
+    "W285-R2-S3": {
+      "mat": 5,
+      "slot": 14
+    },
+    "W285-R2-S4": {
+      "mat": 6,
+      "slot": 14
+    },
+    "W106-R3-S1": {
+      "mat": 1,
+      "slot": 15
+    },
+    "W106-R3-S2": {
+      "mat": 2,
+      "slot": 15
+    },
+    "W113-R3-S1": {
+      "mat": 3,
+      "slot": 15
+    },
+    "W113-R3-S2": {
+      "mat": 4,
+      "slot": 15
+    },
+    "W120-R3-S1": {
+      "mat": 5,
+      "slot": 15
+    },
+    "W126-R3-S1": {
+      "mat": 6,
+      "slot": 15
+    },
+    "W126-R3-S2": {
+      "mat": 1,
+      "slot": 16
+    },
+    "W132-R3-S1": {
+      "mat": 2,
+      "slot": 16
+    },
+    "W132-R3-S2": {
+      "mat": 3,
+      "slot": 16
+    },
+    "W138-R3-S1": {
+      "mat": 4,
+      "slot": 16
+    },
+    "W138-R3-S2": {
+      "mat": 5,
+      "slot": 16
+    },
+    "W145-R3-S1": {
+      "mat": 6,
+      "slot": 16
+    },
+    "W145-R3-S2": {
+      "mat": 1,
+      "slot": 17
+    },
+    "W152-R3-S1": {
+      "mat": 2,
+      "slot": 17
+    },
+    "W160-R3-S1": {
+      "mat": 3,
+      "slot": 17
+    },
+    "W170-R3-S1": {
+      "mat": 4,
+      "slot": 17
+    },
+    "W182-R3-S1": {
+      "mat": 5,
+      "slot": 17
+    },
+    "W182-R3-S2": {
+      "mat": 6,
+      "slot": 17
+    },
+    "W195-R3-S1": {
+      "mat": 1,
+      "slot": 18
+    },
+    "W195-R3-S2": {
+      "mat": 2,
+      "slot": 18
+    },
+    "W220-R3-S1": {
+      "mat": 3,
+      "slot": 18
+    },
+    "W220-R3-S2": {
+      "mat": 4,
+      "slot": 18
+    },
+    "W285-R3-S1": {
+      "mat": 5,
+      "slot": 18
+    },
+    "W285-R3-S2": {
+      "mat": 6,
+      "slot": 18
+    },
+    "W106-R4-S1": {
+      "mat": 1,
+      "slot": 19
+    },
+    "W113-R4-S1": {
+      "mat": 2,
+      "slot": 19
+    },
+    "W126-R4-S1": {
+      "mat": 3,
+      "slot": 19
+    },
+    "W132-R4-S1": {
+      "mat": 4,
+      "slot": 19
+    },
+    "W138-R4-S1": {
+      "mat": 5,
+      "slot": 19
+    },
+    "W145-R4-S1": {
+      "mat": 6,
+      "slot": 19
+    },
+    "W182-R4-S1": {
+      "mat": 1,
+      "slot": 20
+    },
+    "W195-R4-S1": {
+      "mat": 2,
+      "slot": 20
+    },
+    "W220-R4-S1": {
+      "mat": 3,
+      "slot": 20
+    },
+    "W285-R4-S1": {
+      "mat": 4,
+      "slot": 20
+    }
+  },
+  "statistics": {
+    "n_matches_scheduled": 118,
+    "n_mats": 6,
+    "rest_slots": 1,
+    "makespan_slots": 20,
+    "theoretical_lower_bound_slots": 20,
+    "mat_slot_capacity": 120,
+    "mat_utilization_percent": 98.3
+  },
+  "is_valid": true,
+  "violations": [],
+  "scheduling_time_seconds": 0.001990099990507588
+}
