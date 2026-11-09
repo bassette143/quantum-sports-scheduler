@@ -14,13 +14,29 @@ exact backtracking in microseconds and simulated annealing (a classical
 heuristic on the identical QUBO) in milliseconds, both with 100% success.
 We claim no quantum advantage. See [RESULTS.md](./RESULTS.md).
 
-## The problem
+**Wrestling extension (W1–W5D):** a simulated 12-school wrestling
+tournament was scheduled classically onto 6 mats in 20 time slots, which
+equals the proven lower bound. One 14-variable mat-selection decision was
+then solved with QAOA on a noiseless simulator. Over 5 seeds, QAOA reached
+14.9% (p=1) and 18.7% (p=2) feasible samples against 7.9% for random
+guessing, and found the optimum in only some runs. Classical greedy finds
+the optimum in about 10 µs, every time. p=2 was not consistently better
+than p=1, and no quantum advantage was demonstrated.
 
-Schedule a 4-team double round-robin tournament (teams A, B, C, D):
+## The problems
+
+**1. Round-robin.** Schedule a 4-team double round-robin tournament
+(teams A, B, C, D):
 
 - Each team plays every other team twice (once at each team's home venue).
 - Each team plays exactly one game per round.
 - 6 rounds, 2 games per round, 12 games total.
+
+**2. Wrestling tournament.** 12 fictional schools, 14 weight classes, 132
+wrestlers and 118 championship-bracket matches. Every match goes on one of 6
+mats in a time slot, respecting bracket order and a 1-slot rest. The quantum
+part chooses which 6 of the 14 matches ready at time slot 17 should run, one
+per weight class, to maximize bracket progression.
 
 Why this matters in the real world: see [USE-CASE.md](./USE-CASE.md).
 What we simplified and why: see [LIMITATIONS.md](./LIMITATIONS.md).
@@ -35,11 +51,18 @@ What we simplified and why: see [LIMITATIONS.md](./LIMITATIONS.md).
 | `verify_qubo.py` | Exhaustive proof (all 262,144 assignments) that the QUBO is correct |
 | `quantum_scheduler.py` | 18-qubit QAOA experiment (Qiskit + Aer simulator) |
 | `simulated_annealing.py` | Classical simulated-annealing solver on the same QUBO |
-| `wrestling/` | Wrestling tournament simulation: rosters (W1), brackets (W2), mat scheduling + independent validator (W3), mat-selection QUBO feasibility study (W4, classical only) |
 | `benchmark.py` | Controlled depth sweep (p=1,2,3 x 5 seeds) vs classical/random baselines |
 | `benchmark_sa.py` | Simulated annealing benchmark (30 seeds) vs stored QAOA results |
-| `tests/` | 111 automated pytest tests |
-| `results/` | Reproducible JSON results and charts |
+| `wrestling/rosters.py`, `brackets.py` | W1–W2: random rosters and single-elimination brackets |
+| `wrestling/mat_schedule.py`, `mat_validator.py` | W3: greedy mat scheduler and independent mat-schedule validator |
+| `wrestling/mat_qubo.py` | W4: 14-variable mat-selection QUBO, exhaustive verification, classical brute force and greedy |
+| `wrestling/mat_qaoa.py` | W5: QAOA on the W4 QUBO (p=1, seed 42) |
+| `wrestling/mat_qaoa_depth.py` | W5B: single p=2 run (refuses to overwrite) |
+| `wrestling/mat_qaoa_sweep.py` | W5C: 5-seed sweep at p=1 and p=2, plus CI correction |
+| `wrestling/mat_qaoa_sampling.py` | W5D: fixed vs independent sampling seeds, exact statevector evaluation |
+| `tests/` | 169 automated pytest tests |
+| `results/` | Reproducible JSON results and charts (15 evidence files) |
+| `PRESENTATION.md` | Team presentation outline and safe demo script |
 
 ## Installation
 
@@ -83,14 +106,25 @@ venv Python:
 .\.venv\Scripts\python.exe -m wrestling.mat_schedule
 .\.venv\Scripts\python.exe -m wrestling.mat_qubo
 
-# 7. Test suite (111 tests)
+# 7. Wrestling QAOA (Aer simulator, seconds each)
+.\.venv\Scripts\python.exe -m wrestling.mat_qaoa            # W5: p=1, seed 42
+.\.venv\Scripts\python.exe -m wrestling.mat_qaoa_depth      # W5B: p=2, seed 42
+.\.venv\Scripts\python.exe -m wrestling.mat_qaoa_sweep      # W5C: 5 seeds x p=1,2
+.\.venv\Scripts\python.exe -m wrestling.mat_qaoa_sampling   # W5D: 10 matched pairs
+
+# 8. Test suite (169 tests)
 .\.venv\Scripts\python.exe -m pytest -v
 ```
 
 Outputs are written to `results/` as JSON plus `benchmark_charts.png` and
-`solver_comparison_charts.png`. Note: every step except `wrestling.rosters`
-and the test suite **overwrites** its file in `results/`. Copy the folder
-first if you want to keep the recorded measurements.
+`solver_comparison_charts.png`.
+
+**Overwrite behaviour.** Steps 1–6 and `wrestling.mat_qaoa` **overwrite**
+their file in `results/` (only `wrestling.rosters` writes nothing). The
+W5B, W5C and W5D scripts **refuse to run** if their output file already
+exists, so they cannot overwrite recorded evidence. To reproduce
+everything, run in a copy of the folder (see the demo script in
+[PRESENTATION.md](./PRESENTATION.md)).
 
 ## How it works, briefly
 
@@ -123,4 +157,6 @@ Full methodology and the measured numbers: [RESULTS.md](./RESULTS.md).
 Problem class based on the sports scheduling benchmark in the
 [Quantum Optimization Benchmarking Library (QOBLIB)](https://git.zib.de/qopt/qoblib-quantum-optimization-benchmarking-library/-/tree/main/05-sports?ref_type=heads).
 Our 4-team experiment is a deliberately simplified educational instance, not
-a reproduction of the QOBLIB benchmark (see LIMITATIONS.md).
+a reproduction of the QOBLIB benchmark (see LIMITATIONS.md). The wrestling
+tournament uses fictional data and simplified rules. It is not based on
+official competition rules.

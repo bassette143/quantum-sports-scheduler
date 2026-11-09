@@ -91,7 +91,7 @@ limitations are stated plainly.
   did not measure IBM QPU time, so no hardware-time comparison of any kind
   is possible from this work.
 
-## 5. Wrestling simulation limitations (Phases W1–W4)
+## 5. Wrestling simulation limitations (Phases W1–W5D)
 
 - **Championship brackets only.** The projected totals (60 byes, 118
   contested matches for the seed-42 rosters) cover single-elimination
@@ -115,12 +115,48 @@ limitations are stated plainly.
 - **Still excluded overall:** official seeding, consolation/wrestle-back
   brackets, real match durations, actual results, and verified
   competition-specific rest rules.
-- **W4 is a classical feasibility study, not a quantum result.** The
-  14-variable mat-selection QUBO was verified exhaustively and solved by
-  classical brute force and greedy; no QAOA was run on it. In the chosen
-  snapshot (slot 17) the greedy heuristic already finds the optimum, so
-  the instance is easy and demonstrates the model rather than any need
-  for a stronger solver. The "one match per weight class per slot" rule
-  is used only in W4; the W3 validator does not enforce it.
+- **The W4 instance is easy.** The 14-variable mat-selection QUBO was
+  verified exhaustively. In the chosen snapshot (slot 17) the greedy
+  heuristic already finds the optimum in microseconds, so the instance
+  demonstrates the model rather than any need for a stronger solver. The
+  "one match per weight class per slot" rule is used only in W4; the W3
+  validator does not enforce it.
+- **One small snapshot only.** All QAOA work (W5–W5D) uses this single
+  14-qubit decision at one time slot, not the full tournament schedule.
+  Nothing here predicts behavior on larger instances.
+
+## 6. Wrestling QAOA limitations (Phases W5–W5D)
+
+- **Noiseless simulator only.** All runs used the Qiskit Aer simulator
+  with no noise model. No IBM hardware was used and no QPU time was spent.
+  The p=2 circuit has 364 two-qubit gates at depth 123; real-device noise
+  would likely degrade results. Simulator runtimes are not hardware
+  runtimes.
+- **Small samples, high seed sensitivity.** The single-seed runs (seed 42)
+  were not representative. With 5 seeds per depth (W5C) and 10 matched
+  pairs (W5D), confidence intervals are wide. Outcomes vary strongly with
+  the random initial parameters, and no p=1 vs p=2 difference was
+  statistically significant.
+- **The optimizer's objective is optimistic.** COBYLA's best estimate was
+  below the independently measured energy in 19 of 20 W5D runs. This is
+  consistent with selection bias from about 30 noisy 1,000-shot estimates,
+  and it persists with independent sampling seeds. Reported quality must
+  therefore use independent final samples or exact statevector values,
+  never the optimizer's own minimum.
+- **Mean energy is dominated by rare extreme samples.** The penalties
+  (A = B = 13) are large relative to the progression scores (1 or 2), so
+  a few heavily violating samples dominate the mean energy. Mean energy is
+  only weakly related to feasibility (W5C Spearman −0.59, p = 0.07).
+- **Untuned design.** Only p=1 and p=2 were run (no p=3). Penalty weights,
+  the objective (plain mean energy), the COBYLA budget (40 evaluations,
+  binding for 3 of 5 W5C p=2 runs), shot counts and initial-parameter range
+  were not tuned. Better or worse settings may exist.
+- **"Found the optimum" is weak evidence.** A uniform random sampler has
+  about a 21.7% chance of hitting the unique optimum at least once in
+  4,000 shots. Single runs that find it do not establish an algorithmic
+  improvement.
+- **No quantum advantage.** Classical greedy solves the instance optimally
+  in about 10 µs every time; QAOA takes 1–3 s and succeeds only
+  sometimes.
 - **Fictional data.** Sample weight-class labels and fictional schools;
   no real student or competition data.
