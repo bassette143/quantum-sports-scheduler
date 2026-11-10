@@ -23,6 +23,18 @@ guessing, and found the optimum in only some runs. Classical greedy finds
 the optimum in about 10 µs, every time. p=2 was not consistently better
 than p=1, and no quantum advantage was demonstrated.
 
+**Official benchmark validation (RobinX / QOBLIB):** we built an
+independent parser and hard-constraint validator for the official QOBLIB
+05-sports benchmark format (RobinX XML). On the official 8-team instance
+`Addition_000_Small` (56 games, 14 time slots, phased double round-robin),
+it checks all **161 hard constraints** (CA4 ×85, GA1 ×31, BR1 ×44, BR2 ×1)
+plus the round-robin structure. The **published feasible solution passes
+with zero violations**. 46 new tests confirm this. They also deliberately
+break each constraint type and check that the violation is caught, and that
+unsupported constraint types are reported rather than skipped. **We validated
+the official solution; we did not generate it, with QAOA or any of our
+solvers.** Solving the benchmark is future work.
+
 ## The problems
 
 **1. Round-robin.** Schedule a 4-team double round-robin tournament
@@ -60,7 +72,10 @@ What we simplified and why: see [LIMITATIONS.md](./LIMITATIONS.md).
 | `wrestling/mat_qaoa_depth.py` | W5B: single p=2 run (refuses to overwrite) |
 | `wrestling/mat_qaoa_sweep.py` | W5C: 5-seed sweep at p=1 and p=2, plus CI correction |
 | `wrestling/mat_qaoa_sampling.py` | W5D: fixed vs independent sampling seeds, exact statevector evaluation |
-| `tests/` | 169 automated pytest tests |
+| `robinx/parser.py` | Reads official RobinX/ITC2021 instance and solution files (XML or gzip) |
+| `robinx/validator.py` | Independent hard-constraint validator (structure, CA4, GA1, BR1, BR2); reports any unsupported constraint explicitly |
+| `data/robinx/` | Unmodified official QOBLIB instance `Addition_000_Small` and its published solution, with provenance and checksums in `SOURCE.md` |
+| `tests/` | 215 automated pytest tests (169 original + 46 RobinX) |
 | `results/` | Reproducible JSON results and charts (15 evidence files) |
 | `PRESENTATION.md` | Team presentation outline and safe demo script |
 
@@ -112,9 +127,18 @@ venv Python:
 .\.venv\Scripts\python.exe -m wrestling.mat_qaoa_sweep      # W5C: 5 seeds x p=1,2
 .\.venv\Scripts\python.exe -m wrestling.mat_qaoa_sampling   # W5D: 10 matched pairs
 
-# 8. Test suite (169 tests)
+# 8. Test suite (215 tests)
 .\.venv\Scripts\python.exe -m pytest -v
+
+# 9. Validate the official RobinX benchmark solution (reads files only, writes nothing)
+.\.venv\Scripts\python.exe -m robinx.validator
 ```
+
+Step 9 prints a report ending in `Verdict: FULLY VERIFIED`. To check a
+different instance and solution, pass both paths:
+`python -m robinx.validator <instance.xml[.gz]> <solution.xml[.gz]>`.
+Instances that contain constraint types we have not implemented (CA1–CA3,
+FA2, SE1) are reported as **not fully verified**, never as passing.
 
 Outputs are written to `results/` as JSON plus `benchmark_charts.png` and
 `solver_comparison_charts.png`.
@@ -157,6 +181,15 @@ Full methodology and the measured numbers: [RESULTS.md](./RESULTS.md).
 Problem class based on the sports scheduling benchmark in the
 [Quantum Optimization Benchmarking Library (QOBLIB)](https://git.zib.de/qopt/qoblib-quantum-optimization-benchmarking-library/-/tree/main/05-sports?ref_type=heads).
 Our 4-team experiment is a deliberately simplified educational instance, not
-a reproduction of the QOBLIB benchmark (see LIMITATIONS.md). The wrestling
+a reproduction of the QOBLIB benchmark (see LIMITATIONS.md).
+
+**Official benchmark data.** The files in `data/robinx/` are unmodified
+copies of the instance and published solution from QOBLIB 05-sports
+(commit `ee10460`), distributed under the
+[Creative Commons Attribution 4.0 International (CC BY 4.0)](https://creativecommons.org/licenses/by/4.0/)
+license. Instances are from D. Van Bulck and D. Goossens, "The International
+Timetabling Competition on Sports Timetabling (ITC2021)," *European Journal
+of Operational Research*, 2023. The solution was contributed to QOBLIB by
+Team MODAL. Full provenance: [data/robinx/SOURCE.md](./data/robinx/SOURCE.md). The wrestling
 tournament uses fictional data and simplified rules. It is not based on
 official competition rules.
