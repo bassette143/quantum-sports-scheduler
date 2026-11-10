@@ -42,7 +42,8 @@ Raw data: [results/hardware/](./results/hardware/).
 | Item | File |
 |---|---|
 | Step-by-step notebook with saved outputs (simulator + hardware) | [submission_notebook.ipynb](./submission_notebook.ipynb) |
-| Slides | [presentation/Quantum_Sports_Scheduler_Hackathon_2026_v3.pptx](./presentation/Quantum_Sports_Scheduler_Hackathon_2026_v3.pptx) |
+| Slides (PDF, viewable on GitHub) | [presentation/Quantum_Sports_Scheduler_Hackathon_2026_v3.pdf](./presentation/Quantum_Sports_Scheduler_Hackathon_2026_v3.pdf) |
+| Slides (PowerPoint, with speaker notes) | [presentation/Quantum_Sports_Scheduler_Hackathon_2026_v3.pptx](./presentation/Quantum_Sports_Scheduler_Hackathon_2026_v3.pptx) |
 | Submission description | [SUBMISSION_DESCRIPTION.md](./SUBMISSION_DESCRIPTION.md) |
 | Five-minute video script | [FINAL_VIDEO_SCRIPT.md](./FINAL_VIDEO_SCRIPT.md) |
 | Hardware script and results | [hardware/qaoa_hardware.py](./hardware/qaoa_hardware.py), [results/hardware/](./results/hardware/) |
