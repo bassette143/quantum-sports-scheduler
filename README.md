@@ -75,6 +75,7 @@ What we simplified and why: see [LIMITATIONS.md](./LIMITATIONS.md).
 | `robinx/parser.py` | Reads official RobinX/ITC2021 instance and solution files (XML or gzip) |
 | `robinx/validator.py` | Independent hard-constraint validator (structure, CA4, GA1, BR1, BR2); reports any unsupported constraint explicitly |
 | `data/robinx/` | Unmodified official QOBLIB instance `Addition_000_Small` and its published solution, with provenance and checksums in `SOURCE.md` |
+| `app.py` | Read-only Streamlit dashboard: schedule, classical vs. quantum, charts, IBM hardware, official benchmark |
 | `tests/` | 215 automated pytest tests (169 original + 46 RobinX) |
 | `results/` | Reproducible JSON results and charts (15 evidence files) |
 | `PRESENTATION.md` | Team presentation outline and safe demo script |
@@ -92,7 +93,31 @@ py -3.11 -m venv .venv
 
 Exact tested package versions are pinned in [requirements.txt](./requirements.txt)
 (qiskit 2.6.1, qiskit-aer 0.18.2, scipy 1.17.1, numpy 2.4.6,
-matplotlib 3.11.2, pytest 9.2.0).
+matplotlib 3.11.2, pytest 9.2.0; dashboard: streamlit 1.65.0, pandas 3.1.1).
+
+## Interactive dashboard
+
+The quickest way to explore the project is the read-only Streamlit dashboard:
+
+```powershell
+.\.venv\Scripts\python.exe -m streamlit run app.py
+```
+
+It opens at `http://localhost:8501` and has five sections:
+
+1. **Wrestling Schedule:** all 118 matches on 6 mats × 20 time slots.
+2. **Classical vs. Quantum:** the 18-qubit round-robin, the 14-qubit wrestling
+   snapshot and the full tournament, kept separate because they are different
+   problems.
+3. **Charts:** the saved benchmark charts.
+4. **IBM Quantum Hardware:** the 2-qubit Bell-state run on `ibm_fez` and the
+   local QAOA hardware-preparation results.
+5. **Official Benchmark Validation:** the official QOBLIB 8-team solution checked
+   against all 161 hard constraints, plus a live demo that introduces a mistake
+   and shows the validator catching it.
+
+The dashboard only reads saved files. It never reruns QAOA, regenerates
+results, or submits IBM Quantum jobs.
 
 ## Reproducing every result
 

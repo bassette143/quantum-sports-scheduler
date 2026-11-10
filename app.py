@@ -131,6 +131,7 @@ section = st.sidebar.radio(
         "2 · Classical vs. Quantum",
         "3 · Charts",
         "4 · IBM Quantum Hardware",
+        "5 · Official Benchmark Validation",
     ],
 )
 st.sidebar.markdown("---")
@@ -643,6 +644,161 @@ def render_hardware():
 
 
 # ---------------------------------------------------------------------------
+# Section 5: Official RobinX benchmark validation
+# ---------------------------------------------------------------------------
+
+ROBINX_DIR = ROOT / "data" / "robinx"
+ROBINX_INSTANCE = ROBINX_DIR / "Addition_000_Small.xml.gz"
+ROBINX_SOLUTION = ROBINX_DIR / "Addition_000_Small.solution.xml.gz"
+
+CONSTRAINT_INFO = {
+    "CA4": ("Capacity", "Limits how many home games a group of teams plays (in total or per slot)"),
+    "GA1": ("Game", "Requires or forbids specific games in specific time slots"),
+    "BR1": ("Break", "Limits a team's breaks (two home or two away games in a row)"),
+    "BR2": ("Break", "Limits the total number of breaks across teams"),
+}
+
+
+def render_benchmark():
+    st.header("5 · Official Benchmark Validation")
+    st.write(
+        "Our independent validator checks a schedule against the **official QOBLIB "
+        "Sports Tournament Scheduling benchmark** (RobinX XML format, ITC2021 instances)."
+    )
+    st.info(
+        "**What this shows:** the *published* feasible solution for an official 8-team "
+        "instance passes every hard constraint. **We validated this solution; we did not "
+        "generate it**, with QAOA or any of our solvers. Solving the benchmark is future work.",
+        icon="✅",
+    )
+
+    try:
+        from robinx.parser import parse_instance, parse_solution
+        from robinx.validator import validate
+    except ImportError as exc:
+        st.warning(f"The `robinx` package could not be imported: {exc}")
+        return
+    for path in (ROBINX_INSTANCE, ROBINX_SOLUTION):
+        if not path.exists():
+            st.warning(f"Missing benchmark file: `{path.relative_to(ROOT)}`.")
+            return
+    try:
+        instance = parse_instance(ROBINX_INSTANCE)
+        games = parse_solution(ROBINX_SOLUTION).games
+    except Exception as exc:  # noqa: BLE001 - show any parse problem to the viewer
+        st.warning(f"Could not read the benchmark files: {exc}")
+        return
+
+    report = validate(instance, games)
+    n_hard = sum(1 for c in instance.constraints if c.is_hard)
+    n_violated = len(report.violated) + len(report.structure_violations)
+
+    c1, c2, c3, c4, c5 = st.columns(5)
+    c1.metric("Teams", instance.n_teams)
+    c2.metric("Games", len(games))
+    c3.metric("Time slots", instance.n_slots)
+    c4.metric("Hard constraints", n_hard)
+    c5.metric("Violations", n_violated)
+    st.caption(
+        f"Instance `{ROBINX_INSTANCE.name}` (internal name {instance.name}): compact, phased "
+        "double round-robin, so every team plays once per slot and each pair meets once per half-season."
+    )
+
+    if report.fully_verified:
+        st.success(
+            "**Fully verified:** the round-robin structure is valid and every hard constraint "
+            "was checked and satisfied. No constraint was unsupported or skipped."
+        )
+    elif report.checked_constraints_satisfied:
+        st.warning("Checked constraints hold, but some hard constraints are unsupported (see below).")
+    else:
+        st.error("Violations found in the official solution. Please check the data files.")
+
+    summary = report.summary_by_tag()
+    show_table(
+        [
+            {
+                "Constraint": tag,
+                "Family": CONSTRAINT_INFO.get(tag, ("", ""))[0],
+                "What it enforces": CONSTRAINT_INFO.get(tag, ("", ""))[1],
+                "Checked": s["checked"],
+                "Violated": s["violated"],
+            }
+            for tag, s in sorted(summary.items())
+        ]
+    )
+    if report.unsupported:
+        st.warning("Unsupported hard constraints (not verified):")
+        for u in report.unsupported:
+            st.markdown(f"- {u}")
+    st.caption(
+        "Constraint types not present in this instance (CA1–CA3, FA2, SE1) are not "
+        "implemented. If an instance contains them, the validator reports it as not fully "
+        "verified instead of passing it."
+    )
+
+    st.subheader("The official solution")
+    grid: dict[int, list[str]] = {}
+    for h, a, s in sorted(games, key=lambda g: (g[2], g[0])):
+        grid.setdefault(s, []).append(f"{h} vs {a}")
+    half = instance.n_slots // 2
+    st.dataframe(
+        pd.DataFrame(
+            [
+                {"Slot": s, "Half": 1 if s < half else 2, **{f"Game {i + 1}": g for i, g in enumerate(row)}}
+                for s, row in sorted(grid.items())
+            ]
+        ),
+        hide_index=True,
+        width="stretch",
+    )
+    st.caption("Each game is shown as *home team vs away team* (team IDs 0–7).")
+
+    st.subheader("Try it: does the validator catch mistakes?")
+    st.write(
+        "Swap home and away for both meetings of two teams. The schedule stays a valid "
+        "round-robin, but it usually breaks benchmark rules. Nothing is saved; this only "
+        "re-checks the schedule in memory."
+    )
+    t1, t2, t3 = st.columns([1, 1, 2])
+    team_a = t1.selectbox("Team", instance.teams, index=0)
+    team_b = t2.selectbox("Other team", [t for t in instance.teams if t != team_a], index=0)
+    if t3.button("Flip home/away and re-check"):
+        flipped = [(a, h, s) if {h, a} == {team_a, team_b} else (h, a, s) for h, a, s in games]
+        r2 = validate(instance, flipped)
+        if r2.fully_verified:
+            st.success("Still fully verified: this flip happens to break no hard constraint.")
+        else:
+            st.error(
+                f"Detected **{len(r2.violated)}** violated constraint(s) "
+                f"(structure violations: {len(r2.structure_violations)})."
+            )
+            show_table(
+                [{"Constraint": r.label, "Deviation": r.deviation, "Detail": "; ".join(r.details)} for r in r2.violated]
+            )
+
+    st.divider()
+    st.subheader("How this relates to our quantum work")
+    st.markdown(
+        f"- The standard model of this instance uses one binary variable per (home team, "
+        f"away team, slot): **{instance.n_teams * (instance.n_teams - 1) * instance.n_slots} "
+        "variables** before any slack variables. That is far beyond the ~25–30 qubits a laptop "
+        "can simulate exactly, so **no QAOA was run on this benchmark**.\n"
+        "- Our QAOA experiments (sections 2–3) use deliberately small problems: an 18-qubit "
+        "4-team round-robin and a 14-qubit wrestling snapshot.\n"
+        "- The validator is the foundation for future work: any schedule we generate for the "
+        "benchmark, classical or quantum, can be checked against the official rules."
+    )
+
+    st.caption(
+        "Benchmark data: unmodified files from QOBLIB 05-sports (commit ee10460), licensed "
+        "CC BY 4.0. Instance from Van Bulck & Goossens, ITC2021 (EJOR, 2023); solution "
+        "contributed to QOBLIB by Team MODAL. Provenance and checksums: `data/robinx/SOURCE.md`. "
+        "Validator tests: `tests/test_robinx.py` (46 tests; 215 in the full suite)."
+    )
+
+
+# ---------------------------------------------------------------------------
 # Router
 # ---------------------------------------------------------------------------
 
@@ -652,5 +808,7 @@ elif section.startswith("2"):
     render_comparison()
 elif section.startswith("3"):
     render_charts()
-else:
+elif section.startswith("4"):
     render_hardware()
+else:
+    render_benchmark()

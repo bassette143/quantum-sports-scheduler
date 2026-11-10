@@ -5,3 +5,9 @@ qiskit-aer==0.18.2
 scipy==1.17.1
 numpy==2.4.6
 matplotlib==3.11.2
+
+# Interactive dashboard (app.py), added 2026-11-10. streamlit 1.65 requires
+# pillow < 13, so pillow is pinned to the version installed alongside it.
+streamlit==1.65.0
+pandas==3.1.1
+pillow==12.3.0
