@@ -23,6 +23,30 @@ guessing, and found the optimum in only some runs. Classical greedy finds
 the optimum in about 10 µs, every time. p=2 was not consistently better
 than p=1, and no quantum advantage was demonstrated.
 
+**Real IBM quantum hardware (Nov 10, 2026):** we ran the same 14-qubit
+wrestling QAOA circuit on IBM's **`ibm_fez`** processor as one job of 4,000
+shots (job `dbppooc4148s739v0lsg`). We reused the saved simulator angles
+(p=1, seed 22), so nothing was optimized on the hardware. Compiled for the chip,
+the circuit had depth 356 and 280 two-qubit gates, and we checked it gives the
+same ideal probabilities as the simulator circuit. **Measured: 13.2% of hardware
+samples were valid schedules (95% CI 12.2–14.3%) vs. 7.9% for random guessing**
+(p ≈ 7×10⁻³¹). All 423 distinct valid answers passed the independent validator.
+Noise mattered: the same angles give 23.5% in our simulator run, and a pre-run
+FakeFez noise-model *prediction* was 17.4%. The single optimal answer did not
+appear on hardware (best score 11 of 12). An earlier 2-qubit Bell-state test
+(job `dbovmec4148s739tmr50`, 95/100 correlated outcomes) checked the workflow.
+Raw data: [results/hardware/](./results/hardware/).
+
+## Hackathon submission materials
+
+| Item | File |
+|---|---|
+| Step-by-step notebook with saved outputs (simulator + hardware) | [submission_notebook.ipynb](./submission_notebook.ipynb) |
+| Slides | [presentation/Quantum_Sports_Scheduler_Hackathon_2026_v3.pptx](./presentation/Quantum_Sports_Scheduler_Hackathon_2026_v3.pptx) |
+| Submission description | [SUBMISSION_DESCRIPTION.md](./SUBMISSION_DESCRIPTION.md) |
+| Five-minute video script | [FINAL_VIDEO_SCRIPT.md](./FINAL_VIDEO_SCRIPT.md) |
+| Hardware script and results | [hardware/qaoa_hardware.py](./hardware/qaoa_hardware.py), [results/hardware/](./results/hardware/) |
+
 **Official benchmark validation (RobinX / QOBLIB):** we built an
 independent parser and hard-constraint validator for the official QOBLIB
 05-sports benchmark format (RobinX XML). On the official 8-team instance
@@ -75,9 +99,13 @@ What we simplified and why: see [LIMITATIONS.md](./LIMITATIONS.md).
 | `robinx/parser.py` | Reads official RobinX/ITC2021 instance and solution files (XML or gzip) |
 | `robinx/validator.py` | Independent hard-constraint validator (structure, CA4, GA1, BR1, BR2); reports any unsupported constraint explicitly |
 | `data/robinx/` | Unmodified official QOBLIB instance `Addition_000_Small` and its published solution, with provenance and checksums in `SOURCE.md` |
+| `hardware/qaoa_hardware.py` | Guarded IBM hardware run of the wrestling QAOA: local FakeFez preflight, read-only live check, one approved submission, analysis vs. simulator / prediction / random |
 | `app.py` | Read-only Streamlit dashboard: schedule, classical vs. quantum, charts, IBM hardware, official benchmark |
-| `tests/` | 215 automated pytest tests (169 original + 46 RobinX) |
-| `results/` | Reproducible JSON results and charts (15 evidence files) |
+| `submission_notebook.ipynb` | Beginner-friendly walkthrough of the whole project with saved outputs |
+| `tests/` | 228 automated pytest tests (169 original + 46 RobinX + 13 hardware script) |
+| `results/` | Reproducible JSON results and charts from the simulator and classical experiments |
+| `results/hardware/` | IBM `ibm_fez` job record, raw hardware counts and analysis, plus the pre-run FakeFez prediction |
+| `presentation/` | Final slides |
 | `PRESENTATION.md` | Team presentation outline and safe demo script |
 
 ## Installation
@@ -93,7 +121,17 @@ py -3.11 -m venv .venv
 
 Exact tested package versions are pinned in [requirements.txt](./requirements.txt)
 (qiskit 2.6.1, qiskit-aer 0.18.2, scipy 1.17.1, numpy 2.4.6,
-matplotlib 3.11.2, pytest 9.2.0; dashboard: streamlit 1.65.0, pandas 3.1.1).
+matplotlib 3.11.2, pytest 9.2.0; dashboard: streamlit 1.65.0, pandas 3.1.1;
+IBM hardware and FakeFez: qiskit-ibm-runtime 0.51.0).
+
+Check the installation by running the test suite. All 228 tests should pass:
+
+```powershell
+.\.venv\Scripts\python.exe -m pytest -q
+```
+
+The notebook opens directly on GitHub or in VS Code with its outputs already
+saved. To re-run it yourself, also install Jupyter (`pip install jupyter`).
 
 ## Interactive dashboard
 
@@ -110,8 +148,9 @@ It opens at `http://localhost:8501` and has five sections:
    snapshot and the full tournament, kept separate because they are different
    problems.
 3. **Charts:** the saved benchmark charts.
-4. **IBM Quantum Hardware:** the 2-qubit Bell-state run on `ibm_fez` and the
-   local QAOA hardware-preparation results.
+4. **IBM Quantum Hardware:** the wrestling QAOA run on `ibm_fez` (measured
+   result vs. simulator, noise-model prediction and random guessing), then the
+   earlier 2-qubit Bell-state test and the local hardware-preparation report.
 5. **Official Benchmark Validation:** the official QOBLIB 8-team solution checked
    against all 161 hard constraints, plus a live demo that introduces a mistake
    and shows the validator catching it.
@@ -152,12 +191,43 @@ venv Python:
 .\.venv\Scripts\python.exe -m wrestling.mat_qaoa_sweep      # W5C: 5 seeds x p=1,2
 .\.venv\Scripts\python.exe -m wrestling.mat_qaoa_sampling   # W5D: 10 matched pairs
 
-# 8. Test suite (215 tests)
+# 8. Test suite (228 tests)
 .\.venv\Scripts\python.exe -m pytest -v
 
 # 9. Validate the official RobinX benchmark solution (reads files only, writes nothing)
 .\.venv\Scripts\python.exe -m robinx.validator
+
+# 10. IBM hardware experiment (see "Running on IBM hardware" below)
+.\.venv\Scripts\python.exe -m hardware.qaoa_hardware preflight     # local only, ~4 min
 ```
+
+### Running on IBM hardware
+
+`hardware/qaoa_hardware.py` has four commands. Only `submit` uses QPU time.
+
+```powershell
+# Local only: transpile for a FakeFez snapshot, equivalence check, noisy prediction
+.\.venv\Scripts\python.exe -m hardware.qaoa_hardware preflight
+
+# Read the live backend (status, queue, calibration) and re-check the circuit; submits nothing
+.\.venv\Scripts\python.exe -m hardware.qaoa_hardware check-live --backend ibm_fez --credential <NAME>
+
+# Send ONE 4,000-shot job (refuses to run without the approval flag)
+.\.venv\Scripts\python.exe -m hardware.qaoa_hardware submit --backend ibm_fez --credential <NAME> --i-approve-qpu-usage
+
+# Re-attach to a finished job and analyze it
+.\.venv\Scripts\python.exe -m hardware.qaoa_hardware fetch --job-id <JOB_ID> --credential <NAME>
+```
+
+**Credentials.** The script never takes an API key on the command line and
+never stores one. `--credential <NAME>` reads the IBM Quantum API key from a
+*Generic* credential with that name in Windows Credential Manager, in memory
+only. Leave out `--credential` to use an account saved with
+`QiskitRuntimeService.save_account(...)` in `~/.qiskit` instead. Never commit
+keys: `.gitignore` excludes `.env`, `*.key` and `qiskit-ibm.json`.
+
+Hardware results are written to **new** files in `results/hardware/`. The
+script refuses to overwrite existing files.
 
 Step 9 prints a report ending in `Verdict: FULLY VERIFIED`. To check a
 different instance and solution, pass both paths:
@@ -190,6 +260,10 @@ everything, run in a copy of the folder (see the demo script in
 3. **Fair judging:** every schedule — classical or quantum — must pass the
    same independent validator, and the quantum bitstrings are scored with
    the same exhaustively verified energy function.
+4. **Hardware:** the simulator-optimized wrestling circuit is compiled for
+   IBM `ibm_fez`, checked to give the same ideal probabilities, and sampled
+   once on the real chip. Its valid-schedule rate is then compared with the
+   simulator, a noise-model prediction and random guessing.
 
 Full methodology and the measured numbers: [RESULTS.md](./RESULTS.md).
 

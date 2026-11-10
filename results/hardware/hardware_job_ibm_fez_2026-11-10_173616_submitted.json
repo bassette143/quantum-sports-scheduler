@@ -1,0 +1,90 @@
+{
+  "experiment": "wrestling_qaoa_hardware_sampling",
+  "record_type": "ibm_hardware_run",
+  "created": "2026-11-10T17:36:16",
+  "problem": "W4 mat selection, seed 42, slot 17, 14 variables, k=6, A=B=13, C=1",
+  "saved_simulator_parameters": {
+    "source_file": "results\\wrestling_qaoa_sweep_results.json",
+    "depth": 1,
+    "seed": 22,
+    "parameters": [
+      -0.25233993782724806,
+      0.19214056051473938
+    ],
+    "simulator_feasible_percent": 23.475,
+    "simulator_optimal_shots": 2,
+    "simulator_final_shots": 4000,
+    "simulator_two_qubit_gates_logical": 182,
+    "simulator_circuit_depth_logical": 79
+  },
+  "transpilation": {
+    "selected_optimization_level": 2,
+    "selected_seed_transpiler": 16,
+    "candidates_tried": 40,
+    "two_qubit_gates_range": [
+      280,
+      369
+    ],
+    "depth_range": [
+      355,
+      551
+    ],
+    "transpile_seconds": 3.38
+  },
+  "compatibility": {
+    "backend": "ibm_fez",
+    "backend_qubits": 156,
+    "logical_qubits": 14,
+    "logical_depth": 79,
+    "physical_qubits_used": 14,
+    "physical_qubit_indices": [
+      97,
+      105,
+      106,
+      107,
+      108,
+      117,
+      123,
+      124,
+      125,
+      136,
+      143,
+      144,
+      145,
+      146
+    ],
+    "fits_on_backend": true,
+    "isa_depth": 356,
+    "isa_two_qubit_gates": 280,
+    "isa_gate_counts": {
+      "sx": 626,
+      "rz": 403,
+      "cz": 280,
+      "measure": 14,
+      "barrier": 1
+    },
+    "all_instructions_supported_by_target": true,
+    "unsupported_instructions": [],
+    "estimated_circuit_duration_us": 12.6,
+    "rep_delay_us": 250.0,
+    "shots": 4000,
+    "estimated_sampling_seconds": 1.05,
+    "qpu_time_note": "Rough estimate: shots x (circuit duration + repetition delay). IBM also counts setup/readout overhead, so expect a few seconds in total; billed usage is reported by IBM after the job. Open Plan allowance: 600 s per 28 days.",
+    "product_of_gate_and_readout_fidelities": 0.4124,
+    "fidelity_note": "Ignores decoherence and crosstalk, so the real circuit fidelity is likely lower. Values near 0 mean results close to random."
+  },
+  "equivalence_check": {
+    "total_variation_distance_ideal_isa_vs_logical": 1.5800460979557072e-14,
+    "passes_1e-6": true
+  },
+  "exact_noiseless_for_saved_parameters": {
+    "feasible_percent": 23.58091318819136,
+    "optimal_percent": 0.016930747083971343,
+    "mean_qubo_energy": 8.858631631789464
+  },
+  "random_guessing": {
+    "feasible_percent": 7.867431640625,
+    "optimal_percent": 0.006103515625,
+    "mean_qubo_energy": 61.5
+  }
+}

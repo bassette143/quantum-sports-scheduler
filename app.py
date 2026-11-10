@@ -107,8 +107,9 @@ def show_table(rows: list[dict]):
 NO_ADVANTAGE = (
     "**Research finding:** Our classical solvers outperformed QAOA on the tested problems. "
     "The quantum experiments demonstrate a working QUBO/QAOA implementation and reveal "
-    "current limitations; no quantum advantage was established. QAOA results come from a "
-    "noiseless local simulator, and simulator runtimes are not quantum-hardware runtimes."
+    "current limitations; no quantum advantage was established. Most QAOA results come from a "
+    "noiseless local simulator (simulator runtimes are not quantum-hardware runtimes); one "
+    "wrestling QAOA job also ran on real IBM hardware (`ibm_fez`, section 4)."
 )
 
 
@@ -550,13 +551,99 @@ def parse_fields(block: str | None) -> dict:
     return dict(re.findall(r"^\s*([A-Za-z][A-Za-z ]+?):\s*(.+?)\s*$", block, re.M))
 
 
+RANDOM_FEASIBLE_PCT = 100 * 1289 / 16384
+
+
+def render_qaoa_hardware():
+    """The wrestling QAOA job on ibm_fez (saved result + pre-run prediction)."""
+    st.subheader("Wrestling scheduling QAOA on IBM `ibm_fez` (real hardware)")
+    hw_files = sorted((RESULTS / "hardware").glob("hardware_result_*.json"))
+    pre_files = sorted((RESULTS / "hardware").glob("preflight_fakefez_*.json"))
+    if not hw_files:
+        st.warning("Missing `results/hardware/hardware_result_*.json`. The hardware run cannot be shown.")
+        return
+    rec = load_json(f"hardware/{hw_files[-1].name}")
+    pre = load_json(f"hardware/{pre_files[-1].name}") if pre_files else None
+    if rec is None:
+        return
+    job = get(rec, "job") or {}
+    comp = get(rec, "compatibility") or {}
+    h = get(rec, "hardware") or {}
+    saved = get(rec, "saved_simulator_parameters") or {}
+    exact = get(rec, "exact_noiseless_for_saved_parameters") or {}
+
+    st.write(
+        "We ran **our 14-qubit wrestling QAOA circuit** on IBM's `ibm_fez` processor: one job, "
+        f"{h.get('shots', 'n/a')} shots, using the **saved p=1 angles from simulator seed "
+        f"{saved.get('seed', 'n/a')}** (no optimization on hardware). Every sample was scored with "
+        "the original QUBO rules and every distinct valid answer was checked by the independent validator."
+    )
+    c1, c2, c3, c4 = st.columns(4)
+    c1.metric("Valid schedules on hardware (MEASURED)", fmt_pct(h.get("feasible_percent")))
+    c2.metric("Same angles on simulator", fmt_pct(saved.get("simulator_feasible_percent")))
+    c3.metric("Noise-model prediction (FakeFez)",
+              fmt_pct(get(pre, "noisy_prediction", "feasible_percent", warn=False)) if pre else "n/a")
+    c4.metric("Random guessing", fmt_pct(RANDOM_FEASIBLE_PCT))
+    ci = h.get("feasible_percent_ci95_clopper_pearson") or [None, None]
+    val = h.get("validation") or {}
+    st.caption(
+        f"Job ID: `{job.get('job_id', 'n/a')}` · status {job.get('status', 'n/a')} · "
+        f"95% CI for the hardware rate: {fmt_pct(ci[0])} – {fmt_pct(ci[1])} · "
+        f"p-value vs. random guessing: {h.get('p_value_feasible_greater_than_random', float('nan')):.2g} · "
+        f"validator: {val.get('distinct_feasible_checked', 'n/a')} distinct valid answers, "
+        f"{val.get('validator_failures', 'n/a')} failures"
+    )
+
+    rows = [
+        {"Source": "Perfect quantum computer (exact)", "Type": "calculation",
+         "Feasible %": exact.get("feasible_percent")},
+        {"Source": "Saved simulator run", "Type": "simulator",
+         "Feasible %": saved.get("simulator_feasible_percent")},
+        {"Source": "FakeFez noise model", "Type": "prediction",
+         "Feasible %": get(pre, "noisy_prediction", "feasible_percent", warn=False) if pre else None},
+        {"Source": "ibm_fez real hardware", "Type": "MEASURED", "Feasible %": h.get("feasible_percent")},
+        {"Source": "Random guessing", "Type": "calculation", "Feasible %": RANDOM_FEASIBLE_PCT},
+    ]
+    left, right = st.columns([1, 1])
+    with left:
+        show_table([{**r, "Feasible %": None if r["Feasible %"] is None else round(r["Feasible %"], 2)}
+                    for r in rows])
+        show_table([
+            {"Item": "Physical qubits used", "Value": comp.get("physical_qubits_used")},
+            {"Item": "Circuit depth on chip", "Value": comp.get("isa_depth")},
+            {"Item": "Two-qubit (CZ) gates on chip", "Value": comp.get("isa_two_qubit_gates")},
+            {"Item": "Optimal answer (score 12) hits", "Value": h.get("optimal_shots")},
+            {"Item": "Best valid score found", "Value": h.get("best_feasible_score")},
+        ])
+    with right:
+        chart = pd.DataFrame([r for r in rows if r["Feasible %"] is not None]).set_index("Source")[["Feasible %"]]
+        st.bar_chart(chart, y_label="Feasible samples (%)")
+    st.info(
+        "**What this shows:** the scheduling algorithm runs on a real quantum chip and beats random "
+        "guessing, but noise cut the valid-schedule rate well below the simulator (and below the "
+        "noise-model prediction). It is one job with one set of angles. Classical greedy still finds "
+        "the optimum every time in about 10 µs, so **no quantum advantage** is claimed.",
+        icon="🔬",
+    )
+    with st.expander("How it was run"):
+        st.markdown(
+            "Script: `hardware/qaoa_hardware.py`. `preflight` (local FakeFez check) → `check-live` "
+            "(reads the live backend, submits nothing) → one approved `submit`. The script transpiles "
+            "for the chip, confirms the compiled circuit has the same ideal probabilities as the "
+            "simulator circuit, and saves results to new files in `results/hardware/`."
+        )
+
+
 def render_hardware():
     st.header("4 · IBM Quantum Hardware")
     st.write(
-        "Our only real-hardware job so far is a **2-qubit Bell-state test** on IBM `ibm_fez`. "
-        "It checks that we can submit jobs and retrieve results. **It is not the scheduling QAOA.**"
+        "We ran two jobs on IBM `ibm_fez`: **our wrestling scheduling QAOA** (Nov 10) and, before "
+        "that, a **2-qubit Bell-state test** (Nov 9) that only checked our hardware workflow."
     )
+    render_qaoa_hardware()
 
+    st.divider()
+    st.subheader("Earlier: 2-qubit Bell-state test (workflow check, not the scheduling QAOA)")
     text = load_text(RESULTS / "bell_state_ibm_fez_2026-11-09.md")
     if text:
         info = parse_fields(md_section(text, "Experiment Information"))
@@ -622,12 +709,11 @@ def render_hardware():
             st.markdown(text)
 
     st.divider()
-    st.subheader("Preparing the wrestling QAOA for hardware (local tests only)")
-    st.warning(
-        "No wrestling QAOA job has been submitted to IBM hardware. The work below used "
-        "local transpilation and a FakeFez snapshot only; real hardware accuracy and "
-        "runtime are unknown.",
-        icon="🧪",
+    st.subheader("Earlier: preparing the wrestling QAOA for hardware (Nov 9, local tests only)")
+    st.caption(
+        "This saved report predates the hardware run above and used local transpilation and a "
+        "FakeFez snapshot only. Transpilation is randomized: the circuit that actually ran had "
+        "depth 356 and 280 CZ gates (see above)."
     )
     prep = load_text(RESULTS / "qaoa_hardware_optimization_validation_2026-11-09.md")
     if prep:

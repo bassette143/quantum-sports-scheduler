@@ -11,3 +11,7 @@ matplotlib==3.11.2
 streamlit==1.65.0
 pandas==3.1.1
 pillow==12.3.0
+
+# IBM Quantum hardware run (hardware/qaoa_hardware.py), FakeFez snapshot used by
+# tests/test_qaoa_hardware.py and the submission notebook, added 2026-11-10.
+qiskit-ibm-runtime==0.51.0
